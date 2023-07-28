@@ -19,7 +19,7 @@ patches:
       - op: add
         path: /spec/sources/1/helm/valueFiles
         value:
-          - $argo-self/base/argocd/values.yaml
+          - $argo-self/base/argo-cd/values.yaml
           - $argo-self/overlays/seemscloud/values-argocd-apps.yaml
     target:
       kind: Application

@@ -9,3 +9,6 @@ projects:
     destinations:
       - namespace: argocd-system
         server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
