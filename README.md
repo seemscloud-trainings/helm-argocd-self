@@ -19,3 +19,8 @@ helm upgrade \
     --values base/argocd-apps/values.yaml \
     --values overlays/seemscloud/values-argocd-apps.yaml
 ```
+
+```bash
+kustomize  build overlays/seemscloud/ > argo.yaml
+kubectl apply -f argo.yaml
+```
