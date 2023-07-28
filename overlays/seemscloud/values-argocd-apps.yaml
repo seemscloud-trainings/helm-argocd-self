@@ -1,0 +1,11 @@
+projects:
+  - name: argo
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://github.com/seemscloud/helm-argocd-self-managed.git'
+      - 'https://argoproj.github.io/argo-helm'
+    destinations:
+      - namespace: argocd-system
+        server: https://kubernetes.default.svc

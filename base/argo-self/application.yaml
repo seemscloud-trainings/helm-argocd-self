@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-self
+  namespace: argocd-system
+spec:
+  project: argo
+  destination:
+    name: in-cluster
+    server: https://kubernetes.default.svc
+    namespace: argocd-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions: [ ]
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self-managed.git
+      targetRevision: main

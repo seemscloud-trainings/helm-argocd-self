@@ -1,0 +1,41 @@
+fullnameOverride: argocd
+
+configs:
+  params:
+    server.disable.auth: true
+    server.insecure: true
+
+  repositories:
+    seemscloud-argo-self:
+      url: https://github.com/seemscloud/helm-argocd-self-managed.git
+      name: "[SeemsCloud] Argo Self"
+      type: git
+      insecure: "true"
+    argoproj:
+      url: https://argoproj.github.io/argo-helm
+      name: "[ArgoProj][Helm] Helm Charts"
+      type: helm
+      insecure: "true"
+
+server:
+  replicas: 1
+
+  service:
+    type: LoadBalancer
+    servicePortHttp: 8080
+    servicePortHttps: 8443
+
+repoServer:
+  replicas: 1
+
+applicationSet:
+  replicas: 1
+
+controller:
+  replicas: 1
+
+redis:
+  enabled: false
+
+redis-ha:
+  enabled: true
