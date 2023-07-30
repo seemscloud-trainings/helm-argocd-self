@@ -16,4 +16,4 @@ spec:
   source:
     repoURL: https://github.com/seemscloud/helm-argocd-self.git
     targetRevision: main
-    path: overlays
+    path: overlays/seemscloud
