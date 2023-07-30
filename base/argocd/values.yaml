@@ -8,6 +8,8 @@ configs:
 
     ui.bannercontent: |
       "Hello there!"
+      sadf
+      safd
     ui.bannerurl: "https://argoproj.github.io"
     ui.bannerpermanent: "true"
     ui.bannerposition: "top"
