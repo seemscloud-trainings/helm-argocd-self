@@ -16,11 +16,11 @@ spec:
   sources:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
-      ref: argo-self
+      ref: argocd-self
     - chart: argocd-apps
       repoURL: https://argoproj.github.io/argo-helm
       targetRevision: 1.4.0
       helm:
         releaseName: argocd-apps
         valueFiles:
-          - $argo-self/base/argocd-apps/values.yaml
+          - $argocd-self/base/argocd-apps/values.yaml
