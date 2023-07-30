@@ -15,14 +15,15 @@ configs:
     ui.bannerposition: "top"
 
     timeout.reconciliation: 5s
-  #    resource.ignoreResourceUpdatesEnabled: "true"
-  #    resource.customizations.ignoreResourceUpdates.all: |
-  #      jsonPointers:
-  #        - /metadata/resourceVersion
-  #
-  #    resource.customizations.ignoreResourceUpdates.argoproj.io_Application: |
-  #      jsonPointers:
-  #        - /status
+    
+    resource.ignoreResourceUpdatesEnabled: "true"
+    resource.customizations.ignoreResourceUpdates.all: |
+      jsonPointers:
+        - /metadata/resourceVersion
+
+    resource.customizations.ignoreResourceUpdates.argoproj.io_Application: |
+      jsonPointers:
+        - /status
 
   params:
     server.disable.auth: true
