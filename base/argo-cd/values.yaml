@@ -7,7 +7,7 @@ configs:
 
   repositories:
     seemscloud-argo-self:
-      url: https://github.com/seemscloud/helm-argocd-self-managed.git
+      url: https://github.com/seemscloud/helm-argocd-self.git
       name: "[SeemsCloud] Argo Self"
       type: git
       insecure: "true"
