@@ -15,6 +15,7 @@ configs:
     reposerver.log.format: "json"
     reposerver.log.level: "info"
     reposerver.parallelism.limit: 0
+    reposerver.enable.git.submodule: "false"
     reposerver.repo.cache.expiration: "5s"
     reposerver.default.cache.expiration: "5s"
 
@@ -26,6 +27,7 @@ configs:
 
     applicationsetcontroller.log.format: "json"
     applicationsetcontroller.log.level: "info"
+    applicationsetcontroller.enable.git.submodule: "false"
 
     notificationscontroller.log.format: "json"
     notificationscontroller.log.level: "info"
