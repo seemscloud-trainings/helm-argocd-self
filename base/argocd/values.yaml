@@ -4,6 +4,8 @@ configs:
   params:
     server.disable.auth: true
     server.insecure: true
+    
+    reposerver.parallelism.limit: 0
 
 server:
   replicas: 1
