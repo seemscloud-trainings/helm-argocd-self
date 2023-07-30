@@ -4,8 +4,16 @@ configs:
   params:
     server.disable.auth: true
     server.insecure: true
-    
+
     reposerver.parallelism.limit: 0
+    reposerver.repo.cache.expiration: "0h0m15s"
+    reposerver.default.cache.expiration: "0h0m15s"
+
+    controller.app.state.cache.expiration: "0h0m15s"
+    controller.default.cache.expiration: "0h0m15s"
+
+    server.app.state.cache.expiration: "0h0m15s"
+    server.default.cache.expiration: "0h0m15s"
 
 server:
   replicas: 1
