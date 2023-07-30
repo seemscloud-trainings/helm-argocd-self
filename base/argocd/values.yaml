@@ -12,13 +12,14 @@ configs:
     server.app.state.cache.expiration: "5s"
     server.connection.status.cache.expiration: "5s"
 
+    reposerver.parallelism.limit: 0
     reposerver.log.format: "json"
     reposerver.log.level: "info"
-    reposerver.parallelism.limit: 0
-    reposerver.enable.git.submodule: "false"
     reposerver.repo.cache.expiration: "5s"
     reposerver.default.cache.expiration: "5s"
+    reposerver.enable.git.submodule: "false"
 
+    controller.resource.health.persist: "false"
     controller.log.format: "json"
     controller.log.level: "info"
     controller.metrics.cache.expiration: "5s"
