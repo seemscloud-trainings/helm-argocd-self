@@ -6,14 +6,15 @@ configs:
     server.insecure: true
 
     reposerver.parallelism.limit: 0
-    reposerver.repo.cache.expiration: "0h0m10s"
-    reposerver.default.cache.expiration: "0h0m10s"
+    reposerver.repo.cache.expiration: "5s"
+    reposerver.default.cache.expiration: "5s"
 
-    controller.app.state.cache.expiration: "0h0m10s"
-    controller.default.cache.expiration: "0h0m10s"
+    controller.app.state.cache.expiration: "5s"
+    controller.default.cache.expiration: "5s"
 
-    server.app.state.cache.expiration: "0h0m10s"
-    server.default.cache.expiration: "0h0m10s"
+    server.oidc.cache.expiration: "5s"
+    server.app.state.cache.expiration: "5s"
+    server.default.cache.expiration: "5s"
 
 server:
   replicas: 1
