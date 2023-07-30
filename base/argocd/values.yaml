@@ -19,7 +19,7 @@ server:
   replicas: 1
 
   service:
-    type: LoadBalancer
+    type: ClusterIP
     servicePortHttp: 8080
     servicePortHttps: 8443
 
