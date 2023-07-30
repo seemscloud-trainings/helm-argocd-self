@@ -10,8 +10,8 @@ spec:
     namespace: argocd-system
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: false
+      selfHeal: false
     syncOptions: [ ]
   source:
     repoURL: https://github.com/seemscloud/helm-argocd-self.git
