@@ -19,6 +19,7 @@ configs:
     reposerver.default.cache.expiration: "5s"
     reposerver.enable.git.submodule: "false"
 
+    controller.sharding.algorithm: "round-robin"
     controller.resource.health.persist: "false"
     controller.log.format: "json"
     controller.log.level: "info"
@@ -34,7 +35,7 @@ configs:
     notificationscontroller.log.level: "info"
 
 server:
-  replicas: 1
+  replicas: 2
 
   service:
     type: LoadBalancer
@@ -42,13 +43,13 @@ server:
     servicePortHttps: 8443
 
 repoServer:
-  replicas: 1
+  replicas: 2
 
 applicationSet:
-  replicas: 1
+  replicas: 2
 
 controller:
-  replicas: 1
+  replicas: 2
 
 redis:
   enabled: false
