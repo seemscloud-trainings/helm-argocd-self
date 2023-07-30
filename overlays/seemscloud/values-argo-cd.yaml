@@ -1,6 +1,6 @@
 configs:
   repositories:
-    seemscloud-app-argo-self:
+    seemscloud-app-argocd-self:
       url: https://github.com/seemscloud/helm-argocd-self.git
       name: "[SeemsCloud][App] Argo Self"
       type: git
