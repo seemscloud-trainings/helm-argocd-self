@@ -6,10 +6,11 @@ configs:
     jsonnet.enabled: true
     helm.enabled: true
 
-    ui.bannercontent: "Hello there!"
+    ui.bannercontent: |
+      "Hello there!"
     ui.bannerurl: "https://argoproj.github.io"
     ui.bannerpermanent: "true"
-    ui.bannerposition: "right"
+    ui.bannerposition: "top"
 
     timeout.reconciliation: 5s
   #    resource.ignoreResourceUpdatesEnabled: "true"
