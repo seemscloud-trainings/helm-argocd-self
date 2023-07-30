@@ -1,5 +1,5 @@
 projects:
-  - name: argo
+  - name: argocd
     namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io

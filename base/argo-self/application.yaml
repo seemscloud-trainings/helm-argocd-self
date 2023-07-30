@@ -4,7 +4,7 @@ metadata:
   name: argo-self
   namespace: argocd-system
 spec:
-  project: argo
+  project: argocd
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd-system
@@ -14,5 +14,5 @@ spec:
       selfHeal: true
     syncOptions: [ ]
   sources:
-    - repoURL: https://github.com/seemscloud/helm-argocd-self-managed.git
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
