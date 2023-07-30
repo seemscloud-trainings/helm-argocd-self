@@ -15,7 +15,6 @@ configs:
     reposerver.log.format: "json"
     reposerver.log.level: "info"
     reposerver.parallelism.limit: 0
-    reposerver.disable.tls: "true"
     reposerver.enable.git.submodule: "false"
     reposerver.repo.cache.expiration: "5s"
     reposerver.default.cache.expiration: "5s"
