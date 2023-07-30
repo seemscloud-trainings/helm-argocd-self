@@ -39,3 +39,5 @@ redis:
 
 redis-ha:
   enabled: true
+
+  replicas: 2
