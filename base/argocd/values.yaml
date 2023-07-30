@@ -7,8 +7,10 @@ configs:
     server.log.format: "json"
     server.log.level: "info"
     server.oidc.cache.expiration: "5s"
-    server.app.state.cache.expiration: "5s"
     server.default.cache.expiration: "5s"
+    server.login.attempts.expiration: "5s"
+    server.app.state.cache.expiration: "5s"
+    server.connection.status.cache.expiration: "5s"
 
     reposerver.log.format: "json"
     reposerver.log.level: "info"
@@ -18,6 +20,7 @@ configs:
 
     controller.log.format: "json"
     controller.log.level: "info"
+    controller.metrics.cache.expiration: "5s"
     controller.app.state.cache.expiration: "5s"
     controller.default.cache.expiration: "5s"
 
