@@ -2,6 +2,8 @@ fullnameOverride: argocd
 
 configs:
   params:
+    resource.ignoreResourceUpdatesEnabled: "true"
+    
     server.disable.auth: true
     server.insecure: true
     server.log.format: "json"
