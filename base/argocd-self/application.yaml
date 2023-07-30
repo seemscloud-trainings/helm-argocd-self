@@ -20,7 +20,7 @@ spec:
     retry:
       backoff:
         duration: 5s
-        factor: 2
+        factor: 3
         maxDuration: 3m0s
       limit: 5
     syncOptions: [ ]
