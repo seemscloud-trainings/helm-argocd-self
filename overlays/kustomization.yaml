@@ -12,7 +12,7 @@ patches:
         path: /spec/sources/1/helm/valueFiles
         value:
           - $argocd-self/base/argocd/values.yaml
-          - $argocd-self/overlays/values-argocd.yaml
+          - $argocd-self/overlays/argocd/values.yaml
     target:
       kind: Application
       name: argocd
@@ -20,8 +20,8 @@ patches:
       - op: add
         path: /spec/sources/1/helm/valueFiles
         value:
-          - $argocd-self/base/argocd/values.yaml
-          - $argocd-self/overlays/values-argocd-apps.yaml
+          - $argocd-self/base/argocd-apps/values.yaml
+          - $argocd-self/overlays/argocd-apps/values.yaml
     target:
       kind: Application
       name: argocd-apps

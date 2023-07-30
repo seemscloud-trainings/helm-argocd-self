@@ -15,5 +15,3 @@ configs:
       name: "[Ext][Bitnami][Helm] Helm Charts"
       type: helm
       insecure: "true"
-
-  clusterCredentials: [ ]
