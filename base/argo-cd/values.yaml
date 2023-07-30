@@ -17,12 +17,12 @@ configs:
       type: helm
       insecure: "true"
   clusterCredentials: []
-     - name: seemscloud
-       server: https://kubernetes.default.svc
-       config:
-         bearerToken: "<authentication token>"
-         tlsClientConfig:
-           insecure: false
+#     - name: seemscloud
+#       server: https://kubernetes.default.svc
+#       config:
+#         bearerToken: "<authentication token>"
+#         tlsClientConfig:
+#           insecure: false
 
 server:
   replicas: 1
