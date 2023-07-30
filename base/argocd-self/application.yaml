@@ -14,6 +14,6 @@ spec:
       selfHeal: false
     syncOptions: [ ]
   source:
-    repoURL: https://github.com/seemscloud/helm-argocd-self.gitx
+    repoURL: https://github.com/seemscloud/helm-argocd-self.git
     targetRevision: main
     path: overlays
