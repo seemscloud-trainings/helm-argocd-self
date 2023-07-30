@@ -7,7 +7,7 @@ configs:
     helm.enabled: true
 
     ui.bannercontent: |
-      Hello there!<br />
+      Hello there!<hr>
       sadf<br />
       safd<br />
     ui.bannerurl: "https://argoproj.github.io"
