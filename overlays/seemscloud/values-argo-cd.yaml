@@ -10,5 +10,10 @@ configs:
       name: "[ArgoProj][Helm] Helm Charts"
       type: helm
       insecure: "true"
+    bitnami-helm-helm-charts:
+      url: https://charts.bitnami.com/bitnami
+      name: "[Bitnami][Helm] Helm Charts"
+      type: helm
+      insecure: "true"
 
   clusterCredentials: [ ]
