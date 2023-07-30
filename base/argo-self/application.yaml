@@ -13,6 +13,7 @@ spec:
       prune: true
       selfHeal: true
     syncOptions: [ ]
-  sources:
-    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
-      targetRevision: main
+  source:
+    repoURL: https://github.com/seemscloud/helm-argocd-self.git
+    targetRevision: main
+    path: overlays/seemscloud
