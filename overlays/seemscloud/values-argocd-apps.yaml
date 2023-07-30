@@ -12,3 +12,16 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
+  - name: metallb
+    namespace: metallb-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+      - 'https://argoproj.github.io/argo-helm'
+    destinations:
+      - namespace: argocd-system
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
