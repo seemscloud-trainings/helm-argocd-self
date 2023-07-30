@@ -21,6 +21,6 @@ helm upgrade \
 ```
 
 ```bash
-kustomize  build overlays/seemscloud/ > argo.yaml
+kustomize  build overlays/seemscloud > argo.yaml
 kubectl apply -f argo.yaml
 ```
