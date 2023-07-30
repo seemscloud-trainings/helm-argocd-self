@@ -6,6 +6,7 @@ projects:
     sourceRepos:
       - 'https://github.com/seemscloud/helm-argocd-self.git'
       - 'https://argoproj.github.io/argo-helm'
+      - 'https://charts.bitnami.com/bitnami'
     destinations:
       - namespace: argocd-system
         server: https://kubernetes.default.svc

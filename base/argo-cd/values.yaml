@@ -5,19 +5,6 @@ configs:
     server.disable.auth: true
     server.insecure: true
 
-  repositories:
-    seemscloud-argo-self:
-      url: https://github.com/seemscloud/helm-argocd-self.git
-      name: "[SeemsCloud] Argo Self"
-      type: git
-      insecure: "true"
-    argoproj:
-      url: https://argoproj.github.io/argo-helm
-      name: "[ArgoProj][Helm] Helm Charts"
-      type: helm
-      insecure: "true"
-  clusterCredentials: [ ]
-
 server:
   replicas: 1
 
