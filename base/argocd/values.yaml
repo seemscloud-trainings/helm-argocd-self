@@ -3,6 +3,14 @@ fullnameOverride: argocd
 configs:
   cm:
     resource.ignoreResourceUpdatesEnabled: "true"
+    resource.customizations.ignoreResourceUpdates.all: |
+      jsonPointers:
+      - /metadata/resourceVersion
+      
+    resource.customizations.ignoreResourceUpdates.argoproj.io_Application: |
+      jsonPointers:
+      - /status
+
 
   params:
     server.disable.auth: true
