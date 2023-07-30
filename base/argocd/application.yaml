@@ -21,6 +21,6 @@ spec:
       repoURL: https://argoproj.github.io/argo-helm
       targetRevision: 5.42.0
       helm:
-        releaseName: argo-cd
+        releaseName: argocd
         valueFiles:
-          - $argocd-self/base/argo-cd/values.yaml
+          - $argocd-self/base/argocd/values.yaml
