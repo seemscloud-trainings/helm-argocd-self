@@ -14,7 +14,7 @@ configs:
     ui.bannerpermanent: "true"
     ui.bannerposition: "top"
 
-    timeout.reconciliation: 15s
+    timeout.reconciliation: 1m
 
     resource.ignoreResourceUpdatesEnabled: "true"
     #resource.customizations.ignoreResourceUpdates.all: |
@@ -30,26 +30,26 @@ configs:
     server.insecure: true
     server.log.format: "json"
     server.log.level: "info"
-    server.oidc.cache.expiration: "15s"
-    server.default.cache.expiration: "15s"
-    server.login.attempts.expiration: "15s"
-    server.app.state.cache.expiration: "15s"
-    server.connection.status.cache.expiration: "15s"
+    server.oidc.cache.expiration: "1m"
+    server.default.cache.expiration: "1m"
+    server.login.attempts.expiration: "1m"
+    server.app.state.cache.expiration: "1m"
+    server.connection.status.cache.expiration: "1m"
 
     reposerver.parallelism.limit: 0
     reposerver.log.format: "json"
     reposerver.log.level: "info"
-    reposerver.repo.cache.expiration: "15s"
-    reposerver.default.cache.expiration: "15s"
+    reposerver.repo.cache.expiration: "1m"
+    reposerver.default.cache.expiration: "1m"
     reposerver.enable.git.submodule: "false"
 
     controller.sharding.algorithm: "round-robin"
     controller.resource.health.persist: "false"
     controller.log.format: "json"
     controller.log.level: "info"
-    controller.metrics.cache.expiration: "15s"
-    controller.app.state.cache.expiration: "15s"
-    controller.default.cache.expiration: "15s"
+    controller.metrics.cache.expiration: "1m"
+    controller.app.state.cache.expiration: "1m"
+    controller.default.cache.expiration: "1m"
 
     applicationsetcontroller.log.format: "json"
     applicationsetcontroller.log.level: "info"
