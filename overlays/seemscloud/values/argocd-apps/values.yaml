@@ -9,8 +9,10 @@ projects:
       - 'https://charts.bitnami.com/bitnami'
     destinations:
       - namespace: argocd-system
+        name: "in-cluster"
         server: https://kubernetes.default.svc
       - namespace: metrics-system
+        name: "in-cluster"
         server: https://kubernetes.default.svc
     clusterResourceWhitelist:
       - group: '*'
