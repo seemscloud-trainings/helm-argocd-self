@@ -35,7 +35,7 @@ projects:
       - group: '*'
         kind: '*'
   - name: vault-system
-    namespace: vault-system
+    namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
     sourceRepos:
