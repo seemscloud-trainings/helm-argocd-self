@@ -14,6 +14,9 @@ projects:
       - namespace: metrics-system
         name: "in-cluster"
         server: https://kubernetes.default.svc
+      - namespace: vault-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
@@ -26,6 +29,20 @@ projects:
       - 'https://github.com/seemscloud/helm-argocd-self.git'
     destinations:
       - namespace: metrics-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: vault-system
+    namespace: vault-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://helm.releases.hashicorp.com'
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+    destinations:
+      - namespace: vault-system
         name: "in-cluster"
         server: https://kubernetes.default.svc
     clusterResourceWhitelist:
