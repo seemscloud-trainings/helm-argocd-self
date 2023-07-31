@@ -5,6 +5,7 @@ resources:
   - ../../base/argocd
   - ../../base/argocd-apps
   - ../../base/argocd-self
+  - ../../base/prometheus
 
 patches:
   - patch: |-
@@ -25,3 +26,12 @@ patches:
     target:
       kind: Application
       name: argocd-apps
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/prometheus/values.yaml
+          - $argocd-self/overlays/seemscloud/values/prometheus/values.yaml
+    target:
+      kind: Application
+      name: prometheus

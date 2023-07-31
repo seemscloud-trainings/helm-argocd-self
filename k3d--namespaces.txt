@@ -1,0 +1,17 @@
+workspace
+vault-system
+kube-system
+metallb-system
+cert-manager-system
+nginx-ingress-system
+argocd-system
+argo-system
+keda-system
+kiali-system
+istio-system
+istio-gateway-system
+minio-system
+metrics-system
+istio-tracing-system
+logging-system
+jenkins-system
