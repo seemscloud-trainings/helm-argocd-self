@@ -5,22 +5,22 @@ configs:
       name: "[SeemsCloud][App] Argo Self"
       type: git
       insecure: "true"
-    argoproj-helm-helm-charts:
+    argoproj-helm-charts:
       url: https://argoproj.github.io/argo-helm
       name: "[Ext][ArgoProj] Helm Charts"
       type: helm
       insecure: "true"
-    bitnami-helm-helm-charts:
+    bitnami-helm-charts:
       url: https://charts.bitnami.com/bitnami
       name: "[Ext][Bitnami] Helm Charts"
       type: helm
       insecure: "true"
-    prometheus-community-helm-helm-charts:
+    prometheus-community-helm-charts:
       url: https://prometheus-community.github.io/helm-charts
       name: "[Ext][Prometheus Community] Helm Charts"
       type: helm
       insecure: "true"
-    grafana-helm-helm-charts:
+    grafana-helm-charts:
       url: https://grafana.github.io/helm-charts
       name: "[Ext][Grafana] Helm Charts"
       type: helm
