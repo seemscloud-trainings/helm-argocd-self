@@ -13,3 +13,15 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
+  - name: prometheus
+    namespace: metrics-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://prometheus-community.github.io/helm-charts'
+    destinations:
+      - namespace: metrics-system
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
