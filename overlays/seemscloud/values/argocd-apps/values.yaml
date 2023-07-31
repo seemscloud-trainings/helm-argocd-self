@@ -10,6 +10,8 @@ projects:
     destinations:
       - namespace: argocd-system
         server: https://kubernetes.default.svc
+      - namespace: metrics-system
+        server: https://kubernetes.default.svc
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
