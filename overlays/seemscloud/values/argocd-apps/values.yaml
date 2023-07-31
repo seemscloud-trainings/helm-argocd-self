@@ -48,3 +48,17 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
+  - name: minio-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://charts.min.io'
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+    destinations:
+      - namespace: minio-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
