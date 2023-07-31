@@ -1,5 +1,5 @@
 projects:
-  - name: argocd
+  - name: argocd-system
     namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
@@ -17,7 +17,7 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
-  - name: prometheus
+  - name: metrics-system
     namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
