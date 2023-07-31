@@ -70,3 +70,18 @@ configs:
       name: "[Ext][JetStack] Helm Charts"
       type: helm
       insecure: "true"
+    metallb-helm-charts:
+      url: https://metallb.github.io/metallb
+      name: "[Ext][MetaLB] Helm Charts"
+      type: helm
+      insecure: "true"
+    kedacore-helm-charts:
+      url: https://kedacore.github.io/charts
+      name: "[Ext][KEDA] Helm Charts"
+      type: helm
+      insecure: "true"
+    elastic-helm-charts:
+      url: https://helm.elastic.co
+      name: "[Ext][Elastic] Helm Charts"
+      type: helm
+      insecure: "true"
