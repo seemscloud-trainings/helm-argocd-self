@@ -15,3 +15,8 @@ configs:
       name: "[Ext][Bitnami][Helm] Helm Charts"
       type: helm
       insecure: "true"
+    prometheus-community-helm-helm-charts:
+      url: https://prometheus-community.github.io/helm-charts
+      name: "[Ext][Prometheus Community][Helm] Helm Charts"
+      type: helm
+      insecure: "true"
