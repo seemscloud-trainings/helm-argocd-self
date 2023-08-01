@@ -35,3 +35,8 @@ spec:
         releaseName: base
         valueFiles:
           - $argocd-self/base/istio-base/values.yaml
+  ignoreDifferences:
+    - kind: ValidatingWebhookConfiguration
+      group: admissionregistration.k8s.io
+      jsonPointers:
+        - /webhooks/0/failurePolicy
