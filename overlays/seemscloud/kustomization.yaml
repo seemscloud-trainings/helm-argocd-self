@@ -36,3 +36,12 @@ patches:
     target:
       kind: Application
       name: prometheus
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/prometheus/values.yaml
+          - $argocd-self/overlays/seemscloud/values/cert-manager/values.yaml
+    target:
+      kind: Application
+      name: cert-manager
