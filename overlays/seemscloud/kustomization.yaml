@@ -38,6 +38,14 @@ patches:
     target:
       kind: Application
       name: argocd-apps
+
+
+
+
+
+
+
+      
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
@@ -56,6 +64,12 @@ patches:
     target:
       kind: Application
       name: metrics-grafana
+
+
+
+
+
+
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
@@ -65,6 +79,11 @@ patches:
     target:
       kind: Application
       name: cert-manager
+
+
+
+
+
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
@@ -92,6 +111,12 @@ patches:
     target:
       kind: Application
       name: istio-kibana
+
+
+
+
+
+
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
@@ -101,6 +126,10 @@ patches:
     target:
       kind: Application
       name: metallb
+
+
+
+
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
@@ -128,6 +157,11 @@ patches:
     target:
       kind: Application
       name: argo-workflows
+
+
+
+
+
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
@@ -192,7 +226,6 @@ patches:
     target:
       kind: Application
       name: istio-base
-
 
 
 
