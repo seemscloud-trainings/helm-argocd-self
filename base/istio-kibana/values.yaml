@@ -1,7 +1,9 @@
-fullnameOverride: cert-manager
+fullnameOverride: kibana
 
-installCRDs: true
+elasticsearchHosts: "http://elasticsearch:9200"
 
-global:
-  leaderElection:
-    namespace: "cert-manager-system"
+replicas: 1
+
+service:
+  type: LoadBalancer
+  port: 8080

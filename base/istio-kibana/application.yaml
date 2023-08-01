@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: istio-kibana
   namespace: argocd-system
 spec:
-  project: cert-manager-system
+  project: istio-tracing-system
   destination:
     server: https://kubernetes.default.svc
-    namespace: cert-manager-system
+    namespace: istio-tracing-system
   info:
     - name: argocd.seems.cloud/domain
       value: tools
@@ -28,10 +28,10 @@ spec:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: cert-manager
+    - chart: kibana
       repoURL: https://charts.jetstack.io
-      targetRevision: v1.12.3
+      targetRevision: 7.17.3
       helm:
-        releaseName: cert-manager
+        releaseName: kibana
         valueFiles:
-          - $argocd-self/base/cert-manager/values.yaml
+          - $argocd-self/base/istio-kibana/values.yaml

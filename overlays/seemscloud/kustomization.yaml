@@ -9,6 +9,7 @@ resources:
   - ../../base/cert-manager
   - ../../base/istio-jaeger
   - ../../base/istio-elasticsearch
+  - ../../base/istio-kibana
 
 patches:
   - patch: |-
@@ -65,3 +66,12 @@ patches:
     target:
       kind: Application
       name: istio-elasticsearch
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/istio-kibana/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-kibana/values.yaml
+    target:
+      kind: Application
+      name: istio-kibana
