@@ -7,6 +7,7 @@ resources:
   - ../../base/argocd-self
   - ../../base/prometheus
   - ../../base/cert-manager
+  - ../../base/istio-jaeger
 
 patches:
   - patch: |-
@@ -45,3 +46,12 @@ patches:
     target:
       kind: Application
       name: cert-manager
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/istio-jaeger/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-jaeger/values.yaml
+    target:
+      kind: Application
+      name: istio-jaeger

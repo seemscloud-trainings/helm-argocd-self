@@ -1,0 +1,15 @@
+fullnameOverride: jaeger
+
+query:
+  service:
+    type: LoadBalancer
+    port: 8080
+
+storage:
+  type: elasticsearch
+  elasticsearch:
+    host: elasticsearch
+    usePassword: false
+
+provisionDataStore:
+  cassandra: false
