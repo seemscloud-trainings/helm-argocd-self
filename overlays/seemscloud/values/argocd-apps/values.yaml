@@ -94,7 +94,7 @@ projects:
     destinations:
       - namespace: istio-tracing-system
         name: "in-cluster"
-        server: https://jaegertracing.github.io/helm-charts
+        server: https://kubernetes.default.svc
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
