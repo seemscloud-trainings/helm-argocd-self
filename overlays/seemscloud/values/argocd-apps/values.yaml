@@ -85,7 +85,7 @@ projects:
       - group: '*'
         kind: '*'
   - name: istio-tracing-system
-    namespace: istio-tracing-system
+    namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
     sourceRepos:
