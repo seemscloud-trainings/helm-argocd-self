@@ -7,11 +7,11 @@ resources:
   - ../../base/argocd-self
   - ../../base/metrics-prometheus
   - ../../base/metrics-grafana
-  - ../../base/cert-manager
+  - ../../base/devops-cert-manager
   - ../../base/istio-jaeger
   - ../../base/istio-elasticsearch
   - ../../base/istio-kibana
-  - ../../base/metallb
+  - ../../base/networking-metallb
   - ../../base/argo-events
   - ../../base/argo-minio
   - ../../base/argo-workflows

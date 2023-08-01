@@ -86,7 +86,7 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
-  - name: metallb-system
+  - name: networking-system
     namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
@@ -94,13 +94,28 @@ projects:
       - 'https://metallb.github.io/metallb'
       - 'https://github.com/seemscloud/helm-argocd-self.git'
     destinations:
-      - namespace: metallb-system
+      - namespace: networking-system
         name: "in-cluster"
         server: https://kubernetes.default.svc
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
   - name: argo-workflows-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+      - 'https://charts.min.io'
+      - 'https://argoproj.github.io/argo-helm'
+    destinations:
+      - namespace: "*"
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: operators-system
     namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
