@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: metrics-grafana
+  name: argo-workflows
   namespace: argocd-system
 spec:
-  project: metrics-system
+  project: argo-workflows-system
   destination:
     server: https://kubernetes.default.svc
-    namespace: metrics-system
+    namespace: argo-workflows-system
   info:
     - name: argocd.seems.cloud/domain
       value: tools
@@ -28,10 +28,10 @@ spec:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: grafana
-      repoURL: https://grafana.github.io/helm-charts
-      targetRevision: 6.46.1
+    - chart: argo-workflows
+      repoURL: https://argoproj.github.io/argo-helm
+      targetRevision: 0.25.1
       helm:
-        releaseName: grafana
+        releaseName: argo-workflows
         valueFiles:
-          - $argocd-self/base/metrics-grafana/values.yaml
+          - $argocd-self/base/argo-workflows/values.yaml

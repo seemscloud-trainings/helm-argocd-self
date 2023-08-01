@@ -1,1 +1,54 @@
 fullnameOverride: argo-workflows
+
+artifactRepository:
+  archiveLogs: true
+  s3:
+    accessKeySecret:
+      key: accessKey
+      name: minio-creds
+    bucket: user01
+    endpoint: minio:9000
+    insecure: true
+    secretKeySecret:
+      key: secretKey
+      name: minio-creds
+
+controller:
+  logging:
+    level: info
+  metricsConfig:
+    enabled: true
+  name: controller
+  serviceAccount:
+    enabled: true
+  telemetryConfig:
+    enabled: true
+
+crds:
+  install: true
+  keep: false
+
+extraObjects:
+  - apiVersion: v1
+    data:
+      accessKey: dXNlcjAx
+      secretKey: VXNlcjEyMyFAIw==
+    kind: Secret
+    metadata:
+      name: minio-creds
+
+server:
+  enabled: true
+  extraArgs:
+    - --auth-mode=server
+  logging:
+    level: info
+  name: server
+  replicas: 1
+  secure: false
+  serviceAccount:
+    create: true
+  servicePort: 8080
+  serviceType: LoadBalancer
+
+useDefaultArtifactRepo: true
