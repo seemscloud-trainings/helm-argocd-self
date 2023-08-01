@@ -2,21 +2,21 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - ../../base/argocd
-  - ../../base/argocd-apps
-  - ../../base/argocd-self
-  - ../../base/metrics-prometheus
-  - ../../base/metrics-grafana
+  #  - ../../base/argocd
+  #  - ../../base/argocd-apps
+  #  - ../../base/argocd-self
+  #  - ../../base/metrics-prometheus
+  #  - ../../base/metrics-grafana
   - ../../base/istio-base
   - ../../base/istio-istiod
-  - ../../base/istio-jaeger
-  - ../../base/istio-elasticsearch
-  - ../../base/istio-kibana
-  - ../../base/argo-events
-  - ../../base/argo-minio
-  - ../../base/argo-workflows
-  - ../../base/metallb
-  - ../../base/cert-manager
+  #  - ../../base/istio-jaeger
+  #  - ../../base/istio-elasticsearch
+  #  - ../../base/istio-kibana
+  #  - ../../base/argo-events
+  #  - ../../base/argo-minio
+  #  - ../../base/argo-workflows
+  #  - ../../base/metallb
+  #  - ../../base/cert-manager
 
 patches:
   - patch: |-
@@ -142,6 +142,27 @@ patches:
         value:
           - $argocd-self/base/istio-istiod/values.yaml
           - $argocd-self/overlays/seemscloud/values/istio-istiod/values.yaml
+      - op: replace
+        path: /spec/sources/1/targetRevision
+        value: 1.17.2
+      - op: replace
+        path: /metadata/name
+        value: istiod-1.17.2
     target:
       kind: Application
-      name: istio-istiod
+      name: istiod-blue
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/istio-istiod/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-istiod/values.yaml
+      - op: replace
+        path: /spec/sources/1/targetRevision
+        value: 1.17.1
+      - op: replace
+        path: /metadata/name
+        value: istiod-1.17.1
+    target:
+      kind: Application
+      name: istiod-green
