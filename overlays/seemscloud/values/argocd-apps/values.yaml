@@ -20,6 +20,7 @@ projects:
       - resources-finalizer.argocd.argoproj.io
     sourceRepos:
       - 'https://prometheus-community.github.io/helm-charts'
+      - 'https://grafana.github.io/helm-charts'
       - 'https://github.com/seemscloud/helm-argocd-self.git'
     destinations:
       - namespace: metrics-system

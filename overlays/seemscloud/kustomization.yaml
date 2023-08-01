@@ -43,6 +43,15 @@ patches:
       - op: add
         path: /spec/sources/1/helm/valueFiles
         value:
+          - $argocd-self/base/metrics-grafana/values.yaml
+          - $argocd-self/overlays/seemscloud/values/metrics-grafana/values.yaml
+    target:
+      kind: Application
+      name: metrics-grafana
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
           - $argocd-self/base/cert-manager/values.yaml
           - $argocd-self/overlays/seemscloud/values/cert-manager/values.yaml
     target:

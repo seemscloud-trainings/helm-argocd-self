@@ -1,0 +1,21 @@
+fullnameOverride: prometheus
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - isDefault: true
+        name: Prometheus
+        type: prometheus
+        url: http://prometheus-server:8080
+
+grafana.ini:
+  auth:
+    disable_login_form: true
+  auth.anonymous:
+    enabled: true
+    org_role: Admin
+
+service:
+  port: 8080
+  type: LoadBalancer
