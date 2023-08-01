@@ -17,4 +17,4 @@ service:
 
 extraEnvs:
   - name: xpack.security.enabled
-    value: false
+    value: "false"
