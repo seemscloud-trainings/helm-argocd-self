@@ -57,7 +57,7 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
-  - name: devops-system
+  - name: cert-manager-system
     namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
@@ -65,7 +65,7 @@ projects:
       - 'https://charts.jetstack.io'
       - 'https://github.com/seemscloud/helm-argocd-self.git'
     destinations:
-      - namespace: devops-system
+      - namespace: cert-manager-system
         name: "in-cluster"
         server: https://kubernetes.default.svc
     clusterResourceWhitelist:
@@ -86,7 +86,7 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
-  - name: networking-system
+  - name: metallb-system
     namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
@@ -94,7 +94,7 @@ projects:
       - 'https://metallb.github.io/metallb'
       - 'https://github.com/seemscloud/helm-argocd-self.git'
     destinations:
-      - namespace: networking-system
+      - namespace: metallb-system
         name: "in-cluster"
         server: https://kubernetes.default.svc
     clusterResourceWhitelist:
@@ -115,7 +115,7 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
-  - name: operators-system
+  - name: keda-system
     namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io

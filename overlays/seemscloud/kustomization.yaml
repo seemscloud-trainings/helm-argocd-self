@@ -13,8 +13,8 @@ resources:
   - ../../base/argo-events
   - ../../base/argo-minio
   - ../../base/argo-workflows
-  - ../../base/networking-metallb
-  - ../../base/devops-cert-manager
+  - ../../base/metallb
+  - ../../base/cert-manager
 
 patches:
   - patch: |-

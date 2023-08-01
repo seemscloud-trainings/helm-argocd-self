@@ -4,7 +4,7 @@ metadata:
   name: metallb
   namespace: argocd-system
 spec:
-  project: networking-system
+  project: metallb-system
   destination:
     server: https://kubernetes.default.svc
     namespace: metallb-system
