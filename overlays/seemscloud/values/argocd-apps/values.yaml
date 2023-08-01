@@ -76,3 +76,17 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
+  - name: cert-manager-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://charts.jetstack.io'
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+    destinations:
+      - namespace: cert-manager-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
