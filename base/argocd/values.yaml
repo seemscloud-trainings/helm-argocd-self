@@ -81,7 +81,7 @@ redis:
 redis-ha:
   enabled: true
 
-  replicas: 1
+  replicas: 2
 
   haproxy:
-    replicas: 1
+    replicas: 2
