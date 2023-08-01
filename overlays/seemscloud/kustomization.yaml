@@ -14,6 +14,7 @@ resources:
   - ../../base/metallb
   - ../../base/argo-events
   - ../../base/argo-minio
+  - ../../base/argo-workflows
 
 patches:
   - patch: |-
@@ -115,3 +116,12 @@ patches:
     target:
       kind: Application
       name: argo-minio
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/argo-workflows/values.yaml
+          - $argocd-self/overlays/seemscloud/values/argo-workflows/values.yaml
+    target:
+      kind: Application
+      name: argo-workflows
