@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istiod-blue
+  name: istio-gateway-blue
   namespace: argocd-system
 spec:
   project: istio-system
@@ -28,13 +28,13 @@ spec:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: istiod
+    - chart: gateway
       repoURL: https://istio-release.storage.googleapis.com/charts
       targetRevision: 1.17.0
       helm:
-        releaseName: istiod
+        releaseName: gateway
         valueFiles:
-          - $argocd-self/base/istio-istiod/values.yaml
+          - $argocd-self/base/istio-gateway/values.yaml
   ignoreDifferences:
     - kind: ValidatingWebhookConfiguration
       group: admissionregistration.k8s.io
@@ -44,7 +44,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istiod-green
+  name: istio-gateway-green
   namespace: argocd-system
 spec:
   project: istio-system
@@ -71,13 +71,13 @@ spec:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: istiod
+    - chart: gateway
       repoURL: https://istio-release.storage.googleapis.com/charts
       targetRevision: 1.17.2
       helm:
-        releaseName: istiod
+        releaseName: gateway
         valueFiles:
-          - $argocd-self/base/istio-istiod/values.yaml
+          - $argocd-self/base/istio-gateway/values.yaml
   ignoreDifferences:
     - kind: ValidatingWebhookConfiguration
       group: admissionregistration.k8s.io
