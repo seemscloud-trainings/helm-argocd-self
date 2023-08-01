@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metallb
+  namespace: argocd-system
+spec:
+  project: metallb-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: metallb-system
+  info:
+    - name: argocd.seems.cloud/domain
+      value: tools
+    - name: argocd.seems.cloud/team
+      value: devops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 5
+    syncOptions: [ ]
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      ref: argocd-self
+    - chart: metallb
+      repoURL: https://metallb.github.io/metallb
+      targetRevision: 0.13.9
+      helm:
+        releaseName: metallb
+        valueFiles:
+          - $argocd-self/base/metallb/values.yaml

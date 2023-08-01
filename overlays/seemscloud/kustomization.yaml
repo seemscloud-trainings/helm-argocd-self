@@ -11,6 +11,7 @@ resources:
   - ../../base/istio-jaeger
   - ../../base/istio-elasticsearch
   - ../../base/istio-kibana
+  - ../../base/metallb
 
 patches:
   - patch: |-
@@ -85,3 +86,12 @@ patches:
     target:
       kind: Application
       name: istio-kibana
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/metallb/values.yaml
+          - $argocd-self/overlays/seemscloud/values/metallb/values.yaml
+    target:
+      kind: Application
+      name: metallb
