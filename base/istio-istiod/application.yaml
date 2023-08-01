@@ -35,6 +35,11 @@ spec:
         releaseName: istiod
         valueFiles:
           - $argocd-self/base/istio-istiod/values.yaml
+  ignoreDifferences:
+    - kind: ValidatingWebhookConfiguration
+      group: admissionregistration.k8s.io
+      jsonPointers:
+        - /webhooks/0/failurePolicy
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -73,3 +78,8 @@ spec:
         releaseName: istiod
         valueFiles:
           - $argocd-self/base/istio-istiod/values.yaml
+  ignoreDifferences:
+    - kind: ValidatingWebhookConfiguration
+      group: admissionregistration.k8s.io
+      jsonPointers:
+        - /webhooks/0/failurePolicy
