@@ -6,6 +6,7 @@ resources:
   - ../../base/argocd-apps
   - ../../base/argocd-self
   - ../../base/metrics-prometheus
+  - ../../base/metrics-grafana
   - ../../base/cert-manager
   - ../../base/istio-jaeger
   - ../../base/istio-elasticsearch
