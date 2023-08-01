@@ -141,7 +141,7 @@ patches:
         path: /spec/sources/1/helm/valueFiles
         value:
           - $argocd-self/base/istio-istiod/values.yaml
-          - $argocd-self/overlays/seemscloud/values/istio-istiod/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-istiod/values-1.17.2.yaml
       - op: replace
         path: /spec/sources/1/targetRevision
         value: 1.17.2
@@ -156,7 +156,7 @@ patches:
         path: /spec/sources/1/helm/valueFiles
         value:
           - $argocd-self/base/istio-istiod/values.yaml
-          - $argocd-self/overlays/seemscloud/values/istio-istiod/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-istiod/values-1.17.1.yaml
       - op: replace
         path: /spec/sources/1/targetRevision
         value: 1.17.1
