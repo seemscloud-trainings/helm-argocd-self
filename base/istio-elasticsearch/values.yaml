@@ -1,7 +1,20 @@
-fullnameOverride: cert-manager
+fullnameOverride: elasticsearch
 
-installCRDs: true
+masterService: elasticsearch
+nodeGroup: aio
 
-global:
-  leaderElection:
-    namespace: "cert-manager-system"
+replicas: 3
+minimumMasterNodes: 3
+maxUnavailable: 3
+
+persistence:
+  enabled: false
+
+terminationGracePeriod: 0
+
+service:
+  type: LoadBalancer
+
+extraEnvs:
+  - name: xpack.security.enabled
+    value: false

@@ -89,7 +89,8 @@ projects:
     finalizers:
       - resources-finalizer.argocd.argoproj.io
     sourceRepos:
-      - 'https://jaegertracing.github.io/helm-charts '
+      - 'https://jaegertracing.github.io/helm-charts'
+      - 'https://helm.elastic.co'
       - 'https://github.com/seemscloud/helm-argocd-self.git'
     destinations:
       - namespace: istio-tracing-system

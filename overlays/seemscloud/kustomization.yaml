@@ -55,3 +55,12 @@ patches:
     target:
       kind: Application
       name: istio-jaeger
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/istio-elasticsearch/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-elasticsearch/values.yaml
+    target:
+      kind: Application
+      name: istio-elasticsearch
