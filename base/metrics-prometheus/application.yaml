@@ -34,4 +34,4 @@ spec:
       helm:
         releaseName: prometheus
         valueFiles:
-          - $argocd-self/base/prometheus/values.yaml
+          - $argocd-self/base/metrics-prometheus/values.yaml
