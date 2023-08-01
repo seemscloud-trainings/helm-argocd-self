@@ -6,6 +6,7 @@ resources:
   - ../../base/argocd-apps
   - ../../base/argocd-self
   - ../../base/prometheus
+  - ../../base/cert-manager
 
 patches:
   - patch: |-
