@@ -137,6 +137,11 @@ patches:
     target:
       kind: Application
       name: istio-base
+
+
+
+
+
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
@@ -146,6 +151,9 @@ patches:
       - op: replace
         path: /spec/sources/1/targetRevision
         value: 1.17.2
+      - op: replace
+        path: /spec/sources/1/helm/releaseName
+        value: istiod-1-17-2
       - op: replace
         path: /metadata/name
         value: istiod-1.17.2
@@ -160,13 +168,21 @@ patches:
           - $argocd-self/overlays/seemscloud/values/istio-istiod/values-1-17-1.yaml
       - op: replace
         path: /spec/sources/1/targetRevision
-        value: 1.17.1
+        value: 1-17-1
+      - op: replace
+        path: /spec/sources/1/helm/releaseName
+        value: istiod-1-17-1
       - op: replace
         path: /metadata/name
-        value: istiod-1.17.1
+        value: istiod-1-17-1
     target:
       kind: Application
       name: istio-istiod-green
+
+
+
+
+
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
@@ -176,24 +192,11 @@ patches:
     target:
       kind: Application
       name: istio-base
-  - patch: |-
-      - op: add
-        path: /spec/sources/1/helm/valueFiles
-        value:
-          - $argocd-self/base/istio-gateway/values.yaml
-          - $argocd-self/overlays/seemscloud/values/istio-gateway/values-1-17-1.yaml
-      - op: replace
-        path: /spec/sources/1/targetRevision
-        value: 1.17.1
-      - op: replace
-        path: /spec/sources/1/helm/releaseName
-        value: istio-gateway-1-17-1
-      - op: replace
-        path: /metadata/name
-        value: istio-gateway-1-17-1
-    target:
-      kind: Application
-      name: istio-gateway-blue
+
+
+
+
+
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
@@ -209,6 +212,24 @@ patches:
       - op: replace
         path: /metadata/name
         value: istio-gateway-1-17-2
+    target:
+      kind: Application
+      name: istio-gateway-blue
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/istio-gateway/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-gateway/values-1-17-1.yaml
+      - op: replace
+        path: /spec/sources/1/targetRevision
+        value: 1.17.1
+      - op: replace
+        path: /spec/sources/1/helm/releaseName
+        value: istio-gateway-1-17-1
+      - op: replace
+        path: /metadata/name
+        value: istio-gateway-1-17-1
     target:
       kind: Application
       name: istio-gateway-green
