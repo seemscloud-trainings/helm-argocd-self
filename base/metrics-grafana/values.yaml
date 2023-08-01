@@ -1,4 +1,4 @@
-fullnameOverride: prometheus
+fullnameOverride: grafana
 
 datasources:
   datasources.yaml:
