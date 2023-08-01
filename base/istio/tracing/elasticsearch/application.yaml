@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager
+  namespace: argocd-system
+spec:
+  project: istio-tracing-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cert-manager-system
+  info:
+    - name: argocd.seems.cloud/domain
+      value: tools
+    - name: argocd.seems.cloud/team
+      value: devops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 5
+    syncOptions: [ ]
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      ref: argocd-self
+    - chart: istio-tracing-system
+      repoURL: https://charts.jetstack.io
+      targetRevision: v1.12.3
+      helm:
+        releaseName: cert-manager
+        valueFiles:
+          - $argocd-self/base/cert-manager/values.yaml

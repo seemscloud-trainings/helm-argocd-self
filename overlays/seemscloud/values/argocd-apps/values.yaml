@@ -90,3 +90,17 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
+  - name: istio-tracing-system
+    namespace: istio-tracing-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://charts.jetstack.io'
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+    destinations:
+      - namespace: istio-tracing-system
+        name: "in-cluster"
+        server: https://jaegertracing.github.io/helm-charts
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
