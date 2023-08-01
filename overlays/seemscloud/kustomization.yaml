@@ -12,6 +12,7 @@ resources:
   - ../../base/istio-elasticsearch
   - ../../base/istio-kibana
   - ../../base/metallb
+  - ../../base/argo-events
 
 patches:
   - patch: |-
@@ -95,3 +96,12 @@ patches:
     target:
       kind: Application
       name: metallb
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/argo-events/values.yaml
+          - $argocd-self/overlays/seemscloud/values/argo-events/values.yaml
+    target:
+      kind: Application
+      name: argo-events

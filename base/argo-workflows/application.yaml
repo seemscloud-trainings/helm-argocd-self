@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metrics-grafana
+  namespace: argocd-system
+spec:
+  project: metrics-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: metrics-system
+  info:
+    - name: argocd.seems.cloud/domain
+      value: tools
+    - name: argocd.seems.cloud/team
+      value: devops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 5
+    syncOptions: [ ]
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      ref: argocd-self
+    - chart: grafana
+      repoURL: https://grafana.github.io/helm-charts
+      targetRevision: 6.46.1
+      helm:
+        releaseName: grafana
+        valueFiles:
+          - $argocd-self/base/metrics-grafana/values.yaml

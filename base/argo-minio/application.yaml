@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-events
+  namespace: argocd-system
+spec:
+  project: argo-workflows-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo-workflows-system
+  info:
+    - name: argocd.seems.cloud/domain
+      value: tools
+    - name: argocd.seems.cloud/team
+      value: devops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 5
+    syncOptions: [ ]
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      ref: argocd-self
+    - chart: argo-events
+      repoURL: https://argoproj.github.io/argo-helm
+      targetRevision: 2.2.0
+      helm:
+        releaseName: argo-events
+        valueFiles:
+          - $argocd-self/base/argo-events/values.yaml
