@@ -151,7 +151,7 @@ patches:
         value: istiod-1.17.2
     target:
       kind: Application
-      name: istiod-blue
+      name: istio-istiod-blue
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
@@ -163,7 +163,7 @@ patches:
         value: 1.17.1
       - op: replace
         path: /metadata/name
-        value: istiod-1.17.1
+        value: istio-istiod-1.17.1
     target:
       kind: Application
       name: istiod-green

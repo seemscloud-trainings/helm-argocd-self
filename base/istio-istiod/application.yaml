@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istiod-blue
+  name: istio-istiod-blue
   namespace: argocd-system
 spec:
   project: istio-system
@@ -30,7 +30,7 @@ spec:
       ref: argocd-self
     - chart: istiod
       repoURL: https://istio-release.storage.googleapis.com/charts
-      targetRevision: 1.17.0
+      targetRevision: 1.17.1
       helm:
         releaseName: istiod
         valueFiles:
@@ -44,7 +44,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istiod-green
+  name: istio-istiod-green
   namespace: argocd-system
 spec:
   project: istio-system
