@@ -7,6 +7,8 @@ resources:
   - ../../base/argocd-self
   - ../../base/metrics-prometheus
   - ../../base/metrics-grafana
+  - ../../base/istio-base
+  - ../../base/istio-istiod
   - ../../base/istio-jaeger
   - ../../base/istio-elasticsearch
   - ../../base/istio-kibana
@@ -125,3 +127,21 @@ patches:
     target:
       kind: Application
       name: argo-workflows
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/istio-base/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-base/values.yaml
+    target:
+      kind: Application
+      name: istio-base
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/istio-istiod/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-istiod/values.yaml
+    target:
+      kind: Application
+      name: istio-istiod

@@ -1,0 +1,10 @@
+revision: 1-17-2
+
+global:
+  configValidation: true
+
+pilot:
+  autoscaleEnabled: true
+  autoscaleMin: 3
+  autoscaleMax: 3
+  replicaCount: 3
