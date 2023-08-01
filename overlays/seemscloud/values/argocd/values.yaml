@@ -85,3 +85,8 @@ configs:
       name: "[Ext][Elastic] Helm Charts"
       type: helm
       insecure: "true"
+    istio-helm-charts:
+      url: https://istio-release.storage.googleapis.com/charts
+      name: "[Ext][Istio] Helm Charts"
+      type: helm
+      insecure: "true"
