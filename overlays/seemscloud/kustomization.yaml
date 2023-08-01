@@ -166,3 +166,33 @@ patches:
     target:
       kind: Application
       name: istiod-green
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/istio-base/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-base/values-1-17-2.yaml
+      - op: replace
+        path: /spec/sources/1/targetRevision
+        value: 1.17.2
+      - op: replace
+        path: /metadata/name
+        value: istio-base-1.17.2
+    target:
+      kind: Application
+      name: istiod-blue
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/istio-base/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-base/values-1-17-1.yaml
+      - op: replace
+        path: /spec/sources/1/targetRevision
+        value: 1.17.1
+      - op: replace
+        path: /metadata/name
+        value: istio-base-1.17.1
+    target:
+      kind: Application
+      name: istiod-green
