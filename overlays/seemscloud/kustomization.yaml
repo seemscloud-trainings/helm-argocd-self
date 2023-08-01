@@ -2,21 +2,21 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  #  - ../../base/argocd
-  #  - ../../base/argocd-apps
-  #  - ../../base/argocd-self
-  #  - ../../base/metrics-prometheus
-  #  - ../../base/metrics-grafana
+  - ../../base/argocd
+  - ../../base/argocd-apps
+  - ../../base/argocd-self
+  - ../../base/metrics-prometheus
+  - ../../base/metrics-grafana
   - ../../base/istio-base
   - ../../base/istio-istiod
-  #  - ../../base/istio-jaeger
-  #  - ../../base/istio-elasticsearch
-  #  - ../../base/istio-kibana
-  #  - ../../base/argo-events
-  #  - ../../base/argo-minio
-  #  - ../../base/argo-workflows
-  #  - ../../base/metallb
-  #  - ../../base/cert-manager
+  - ../../base/istio-jaeger
+  - ../../base/istio-elasticsearch
+  - ../../base/istio-kibana
+  - ../../base/argo-events
+  - ../../base/argo-minio
+  - ../../base/argo-workflows
+  - ../../base/metallb
+  - ../../base/cert-manager
 
 patches:
   - patch: |-
