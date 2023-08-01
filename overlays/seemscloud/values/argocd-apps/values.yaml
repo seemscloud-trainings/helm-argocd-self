@@ -115,7 +115,7 @@ projects:
       - group: '*'
         kind: '*'
   - name: argo-workflows-system
-    namespace: argo-workflows-system
+    namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
     sourceRepos:
