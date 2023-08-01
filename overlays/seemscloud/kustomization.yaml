@@ -186,6 +186,9 @@ patches:
         path: /spec/sources/1/targetRevision
         value: 1.17.1
       - op: replace
+        path: /spec/sources/1/helm/releaseName
+        value: istio-gateway-1.17.1
+      - op: replace
         path: /metadata/name
         value: istio-gateway-1.17.1
     target:
@@ -200,6 +203,9 @@ patches:
       - op: replace
         path: /spec/sources/1/targetRevision
         value: 1.17.2
+      - op: replace
+        path: /spec/sources/1/helm/releaseName
+        value: istio-gateway-1.17.2
       - op: replace
         path: /metadata/name
         value: istio-gateway-1.17.2
