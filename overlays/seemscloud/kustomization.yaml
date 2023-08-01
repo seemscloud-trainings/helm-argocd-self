@@ -156,7 +156,7 @@ patches:
         value: istiod-1-17-2
       - op: replace
         path: /metadata/name
-        value: istiod-1.17.2
+        value: istiod-1-17-2
     target:
       kind: Application
       name: istio-istiod-blue
