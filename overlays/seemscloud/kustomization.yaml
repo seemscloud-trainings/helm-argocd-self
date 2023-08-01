@@ -13,6 +13,7 @@ resources:
   - ../../base/istio-kibana
   - ../../base/metallb
   - ../../base/argo-events
+  - ../../base/argo-minio
 
 patches:
   - patch: |-
@@ -105,3 +106,12 @@ patches:
     target:
       kind: Application
       name: argo-events
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/argo-minio/values.yaml
+          - $argocd-self/overlays/seemscloud/values/argo-minio/values.yaml
+    target:
+      kind: Application
+      name: argo-minio

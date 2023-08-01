@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-events
+  name: minio
   namespace: argocd-system
 spec:
   project: argo-workflows-system
@@ -28,10 +28,10 @@ spec:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: argo-events
-      repoURL: https://argoproj.github.io/argo-helm
-      targetRevision: 2.2.0
+    - chart: minio
+      repoURL: https://charts.min.io
+      targetRevision: 5.0.1
       helm:
-        releaseName: argo-events
+        releaseName: minio
         valueFiles:
-          - $argocd-self/base/argo-events/values.yaml
+          - $argocd-self/base/argo-minio/values.yaml

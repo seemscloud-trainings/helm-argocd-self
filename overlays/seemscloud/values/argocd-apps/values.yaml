@@ -120,6 +120,7 @@ projects:
       - resources-finalizer.argocd.argoproj.io
     sourceRepos:
       - 'https://github.com/seemscloud/helm-argocd-self.git'
+      - 'https://charts.min.io'
       - 'https://argoproj.github.io/argo-helm'
     destinations:
       - namespace: "*"
