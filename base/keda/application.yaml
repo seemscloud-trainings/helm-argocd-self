@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: keda
+  namespace: argocd-system
+spec:
+  project: keda-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: keda-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      ref: argocd-self
+    - chart: keda
+      repoURL: https://kedacore.github.io/charts
+      targetRevision: 2.8.2
+      helm:
+        releaseName: keda
+        valueFiles:
+          - $argocd-self/base/keda/values.yaml

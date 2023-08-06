@@ -322,3 +322,20 @@ patches:
     target:
       kind: Application
       name: istio-ingress-gateway-green
+##########################################################################################
+#    _  __          _
+#   | |/ /         | |
+#   | ' /  ___   __| |  __ _
+#   |  <  / _ \ / _` | / _` |
+#   | . \|  __/| (_| || (_| |
+#   |_|\_\\___| \__,_| \__,_|
+##########################################################################################
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/keda/values.yaml
+          - $argocd-self/overlays/seemscloud/values/keda/values.yaml
+    target:
+      kind: Application
+      name: keda
