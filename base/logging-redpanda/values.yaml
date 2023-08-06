@@ -21,6 +21,9 @@ resources:
     container:
       max: 2.5Gi
 
+tls:
+  enabled: false
+
 console:
   enabled: true
 
