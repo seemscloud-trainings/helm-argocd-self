@@ -380,3 +380,22 @@ patches:
     target:
       kind: Application
       name: logging-operator-logging
+##########################################################################################
+#     _____                               _
+#    / ____|                             | |
+#   | |      _ __  ___   ___  ___  _ __  | |  __ _  _ __    ___
+#   | |     | '__|/ _ \ / __|/ __|| '_ \ | | / _` || '_ \  / _ \
+#   | |____ | |  | (_) |\__ \\__ \| |_) || || (_| || | | ||  __/
+#    \_____||_|   \___/ |___/|___/| .__/ |_| \__,_||_| |_| \___|
+#                                 | |
+#                                 |_|
+##########################################################################################
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/crossplane/values.yaml
+          - $argocd-self/overlays/seemscloud/values/crossplane/values.yaml
+    target:
+      kind: Application
+      name: crossplane
