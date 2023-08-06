@@ -261,7 +261,7 @@ patches:
       - op: add
         path: /spec/sources/1/helm/valueFiles
         value:
-          - $argocd-self/base/istio-gateway/values.yaml
+          - $argocd-self/base/istio-ingress-gateway/values.yaml
           - $argocd-self/overlays/seemscloud/values/istio-ingress-gateway/values-1-17-2.yaml
       - op: replace
         path: /spec/sources/1/targetRevision
@@ -279,7 +279,7 @@ patches:
       - op: add
         path: /spec/sources/1/helm/valueFiles
         value:
-          - $argocd-self/base/istio-gateway/values.yaml
+          - $argocd-self/base/istio-ingress-gateway/values.yaml
           - $argocd-self/overlays/seemscloud/values/istio-ingress-gateway/values-1-17-1.yaml
       - op: replace
         path: /spec/sources/1/targetRevision
