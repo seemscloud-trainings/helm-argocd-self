@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-kiali
+  namespace: argocd-system
+spec:
+  project: istio-tracing-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-tracing-system
+  info:
+    - name: argocd.seems.cloud/domain
+      value: tools
+    - name: argocd.seems.cloud/team
+      value: devops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 5
+    syncOptions:
+      - CreateNamespace=true
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      ref: argocd-self
+    - chart: kiali-server
+      repoURL: https://helm.elastic.co
+      targetRevision: 7.17.3
+      helm:
+        releaseName: kiali
+        valueFiles:
+          - $argocd-self/base/istio-kiali/values.yaml

@@ -1,0 +1,40 @@
+fullnameOverride: kiali-1-17-0
+
+auth:
+  strategy: anonymous
+
+deployment:
+  service_type: LoadBalancer
+
+external_services:
+  grafana:
+    enabled: true
+    in_cluster_url: http://grafana.metrics-system:8080
+
+  istio:
+    component_status:
+      components:
+        - app_label: istio-ingress-gateway-1-17-0
+          is_core: true
+          is_proxy: true
+          namespace: istio-gateway-system
+      enabled: true
+    config_map_name: istio-1-17-0
+    istio_sidecar_injector_config_map_name: istio-sidecar-injector-1-17-0
+    istiod_deployment_name: istiod-1-17-0
+
+  prometheus:
+    enabled: true
+    url: http://prometheus-server.metrics-system:8080
+
+  tracing:
+    enabled: true
+    in_cluster_url: http://jaeger-query.istio-tracing-system:16685
+
+istio_namespace: istio-system
+
+kiali_feature_flags:
+  istio_upgrade_action: true
+
+server:
+  port: 8080
