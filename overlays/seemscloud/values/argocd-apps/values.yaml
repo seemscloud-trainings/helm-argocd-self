@@ -79,12 +79,8 @@ projects:
       - 'https://jaegertracing.github.io/helm-charts'
       - 'https://helm.elastic.co'
       - 'https://github.com/seemscloud/helm-argocd-self.git'
-      - 'https://kiali.org/helm-charts '
     destinations:
       - namespace: istio-tracing-system
-        name: "in-cluster"
-        server: https://kubernetes.default.svc
-      - namespace: istio-system
         name: "in-cluster"
         server: https://kubernetes.default.svc
     clusterResourceWhitelist:
@@ -141,6 +137,7 @@ projects:
     sourceRepos:
       - 'https://github.com/seemscloud/helm-argocd-self.git'
       - 'https://istio-release.storage.googleapis.com/charts'
+      - 'https://kiali.org/helm-charts '
     destinations:
       - namespace: "*"
         name: "in-cluster"
