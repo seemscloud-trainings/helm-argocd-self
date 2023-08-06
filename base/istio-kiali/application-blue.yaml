@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-kiali-blue
+  namespace: argocd-system
+spec:
+  project: istio-tracing-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-tracing-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      ref: argocd-self
+    - chart: kiali-server
+      repoURL: https://kiali.org/helm-charts
+      targetRevision: 1.66.0
+      helm:
+        releaseName: kiali-blue
+        valueFiles:
+          - $argocd-self/base/istio-kiali/values.yaml

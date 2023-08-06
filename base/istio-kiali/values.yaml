@@ -1,5 +1,3 @@
-fullnameOverride: kiali-1-17-0
-
 auth:
   strategy: anonymous
 
@@ -13,15 +11,8 @@ external_services:
 
   istio:
     component_status:
-      components:
-        - app_label: istio-ingress-gateway-1-17-0
-          is_core: true
-          is_proxy: true
-          namespace: istio-gateway-system
+      components: []
       enabled: true
-    config_map_name: istio-1-17-0
-    istio_sidecar_injector_config_map_name: istio-sidecar-injector-1-17-0
-    istiod_deployment_name: istiod-1-17-0
 
   prometheus:
     enabled: true

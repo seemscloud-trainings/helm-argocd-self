@@ -130,6 +130,41 @@ patches:
     target:
       kind: Application
       name: istio-kibana
+
+
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/istio-kiali/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-kiali/values-1-17-1.yaml
+      - op: replace
+        path: /spec/sources/1/helm/releaseName
+        value: kiali-1-17-1
+      - op: replace
+        path: /metadata/name
+        value: istio-kiali-1-17-1
+    target:
+      kind: Application
+      name: istio-kiali-green
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/istio-kiali/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-kiali/values-1-17-0.yaml
+      - op: replace
+        path: /spec/sources/1/helm/releaseName
+        value: kiali-1-17-0
+      - op: replace
+        path: /metadata/name
+        value: istio-kiali-1-17-0
+    target:
+      kind: Application
+      name: istio-kiali-blue
+
+
+
 ##########################################################################################
 #    __  __        _          _  _       ____
 #   |  \/  |      | |        | || |     |  _ \
