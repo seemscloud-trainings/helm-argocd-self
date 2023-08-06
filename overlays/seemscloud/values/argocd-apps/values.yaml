@@ -84,6 +84,9 @@ projects:
       - namespace: istio-tracing-system
         name: "in-cluster"
         server: https://kubernetes.default.svc
+      - namespace: istio-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
