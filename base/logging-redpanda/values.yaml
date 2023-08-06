@@ -20,3 +20,6 @@ resources:
   memory:
     container:
       max: 2.5Gi
+
+console:
+  enabled: false
