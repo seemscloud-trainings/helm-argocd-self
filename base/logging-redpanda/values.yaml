@@ -23,3 +23,9 @@ resources:
 
 console:
   enabled: true
+
+  serviceAccount:
+    create: true
+
+  service:
+    type: LoadBalancer
