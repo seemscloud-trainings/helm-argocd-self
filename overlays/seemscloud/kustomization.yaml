@@ -21,6 +21,7 @@ resources:
   - ../../base/istio-kiali
   - ../../base/keda
   - ../../base/logging-redpanda
+  - ../../base/logging-redpanda-console
 
 patches:
 ##########################################################################################
@@ -359,4 +360,13 @@ patches:
           - $argocd-self/overlays/seemscloud/values/logging-redpanda/values.yaml
     target:
       kind: Application
-      name: logging-redpanda
+      name: logging-redpanda-console
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/logging-redpanda-console/values.yaml
+          - $argocd-self/overlays/seemscloud/values/logging-redpanda-console/values.yaml
+    target:
+      kind: Application
+      name: logging-redpanda-console
