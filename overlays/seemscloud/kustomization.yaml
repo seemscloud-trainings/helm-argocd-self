@@ -23,6 +23,7 @@ resources:
   - ../../base/logging-redpanda
   - ../../base/logging-operator
   - ../../base/logging-operator-logging
+  - ../../base/crossplane
 
 patches:
 ##########################################################################################
