@@ -20,7 +20,7 @@ spec:
       ref: argocd-self
     - chart: logging-operator-logging
       repoURL: https://kube-logging.github.io/helm-charts
-      targetRevision: 4.2.3
+      targetRevision: 4.2.2
       helm:
         releaseName: logging-operator-logging
         valueFiles:
