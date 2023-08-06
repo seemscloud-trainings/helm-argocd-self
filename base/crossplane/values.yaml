@@ -1,0 +1,3 @@
+provider:
+  packages:
+    - crossplanecontrib/provider-helm:v0.15.0
