@@ -7,7 +7,7 @@ external_services:
         - app_label: istio-ingress-gateway-1-17-1
           is_core: true
           is_proxy: true
-          namespace: istio-gateway-system
+          namespace: istio-system
       enabled: true
     config_map_name: istio-1-17-1
     istio_sidecar_injector_config_map_name: istio-sidecar-injector-1-17-1
