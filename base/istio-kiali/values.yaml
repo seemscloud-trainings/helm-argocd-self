@@ -9,10 +9,10 @@ external_services:
     enabled: true
     in_cluster_url: http://grafana.metrics-system:8080
 
-  istio:
-    component_status:
-      components: []
-      enabled: true
+#  istio:
+#    component_status:
+#      components: []
+#      enabled: true
 
   prometheus:
     enabled: true

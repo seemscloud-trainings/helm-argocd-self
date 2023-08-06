@@ -131,8 +131,6 @@ patches:
     target:
       kind: Application
       name: istio-kibana
-
-
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
@@ -163,9 +161,6 @@ patches:
     target:
       kind: Application
       name: istio-kiali-blue
-
-
-
 ##########################################################################################
 #    __  __        _          _  _       ____
 #   |  \/  |      | |        | || |     |  _ \
