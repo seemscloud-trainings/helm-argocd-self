@@ -4,10 +4,10 @@ metadata:
   name: istio-kiali-blue
   namespace: argocd-system
 spec:
-  project: istio-system
+  project: istio-tracing-system
   destination:
     server: https://kubernetes.default.svc
-    namespace: istio-system
+    namespace: istio-tracing-system
   syncPolicy:
     automated:
       prune: true
