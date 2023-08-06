@@ -125,9 +125,9 @@ projects:
       - resources-finalizer.argocd.argoproj.io
     sourceRepos:
       - 'https://github.com/seemscloud/helm-argocd-self.git'
-      - 'https://argoproj.github.io/argo-helm'
+      - 'https://kedacore.github.io/charts'
     destinations:
-      - namespace: "*"
+      - namespace: "keda-system"
         name: "in-cluster"
         server: https://kubernetes.default.svc
     clusterResourceWhitelist:
