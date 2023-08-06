@@ -4,7 +4,7 @@ external_services:
   istio:
     component_status:
       components:
-        - app_label: istio-ingress-gateway-1-17-1
+        - app_label: ingress-gateway-1-17-1
           is_core: true
           is_proxy: true
           namespace: istio-system
