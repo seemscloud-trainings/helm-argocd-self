@@ -22,6 +22,7 @@ resources:
   - ../../base/keda
   - ../../base/logging-redpanda
   - ../../base/logging-operator
+  - ../../base/logging-operator-logging
 
 patches:
 ##########################################################################################
@@ -370,3 +371,12 @@ patches:
     target:
       kind: Application
       name: logging-operator
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/logging-operator-logging/values.yaml
+          - $argocd-self/overlays/seemscloud/values/logging-operator-logging/values.yaml
+    target:
+      kind: Application
+      name: logging-operator-logging
