@@ -20,7 +20,7 @@ spec:
       ref: argocd-self
     - chart: redpanda
       repoURL: https://charts.redpanda.com/
-      targetRevision: 2.4.0
+      targetRevision: 5.0.8
       helm:
         releaseName: redpanda
         valueFiles:
