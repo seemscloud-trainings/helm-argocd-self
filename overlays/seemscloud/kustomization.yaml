@@ -18,6 +18,7 @@ resources:
   - ../../base/argo-workflows
   - ../../base/metallb
   - ../../base/cert-manager
+  - ../../base/istio-kiali
 
 patches:
 ##########################################################################################
