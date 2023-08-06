@@ -18,7 +18,7 @@ spec:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: keda
+    - chart: crossplane
       repoURL: https://charts.crossplane.io/stable
       targetRevision: 1.13.1
       helm:
