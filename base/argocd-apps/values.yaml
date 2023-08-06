@@ -1,0 +1,152 @@
+projects:
+  - name: argocd-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+      - 'https://argoproj.github.io/argo-helm'
+      - 'https://charts.bitnami.com/bitnami'
+    destinations:
+      - namespace: "*"
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: metrics-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://prometheus-community.github.io/helm-charts'
+      - 'https://grafana.github.io/helm-charts'
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+    destinations:
+      - namespace: metrics-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: vault-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://helm.releases.hashicorp.com'
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+    destinations:
+      - namespace: vault-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: logging-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://charts.redpanda.com/'
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+    destinations:
+      - namespace: logging-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: cert-manager-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://charts.jetstack.io'
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+    destinations:
+      - namespace: cert-manager-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: istio-tracing-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://jaegertracing.github.io/helm-charts'
+      - 'https://helm.elastic.co'
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+      - 'https://kiali.org/helm-charts '
+    destinations:
+      - namespace: istio-tracing-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+      - namespace: istio-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: metallb-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://metallb.github.io/metallb'
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+    destinations:
+      - namespace: metallb-system
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: argo-workflows-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+      - 'https://charts.min.io'
+      - 'https://argoproj.github.io/argo-helm'
+    destinations:
+      - namespace: "*"
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: keda-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+      - 'https://kedacore.github.io/charts'
+    destinations:
+      - namespace: "keda-system"
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+      - namespace: "kube-system"
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+  - name: istio-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+      - 'https://istio-release.storage.googleapis.com/charts'
+    destinations:
+      - namespace: "*"
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'

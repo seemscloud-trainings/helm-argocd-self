@@ -1,6 +1,97 @@
 fullnameOverride: argocd
 
 configs:
+  repositories:
+    seemscloud-app-argocd-self:
+      url: https://github.com/seemscloud/helm-argocd-self.git
+      name: "[SeemsCloud][App] Argo Self"
+      type: git
+      insecure: "true"
+    argoproj-helm-charts:
+      url: https://argoproj.github.io/argo-helm
+      name: "[Ext][ArgoProj] Helm Charts"
+      type: helm
+      insecure: "true"
+    bitnami-helm-charts:
+      url: https://charts.bitnami.com/bitnami
+      name: "[Ext][Bitnami] Helm Charts"
+      type: helm
+      insecure: "true"
+    prometheus-community-helm-charts:
+      url: https://prometheus-community.github.io/helm-charts
+      name: "[Ext][Prometheus Community] Helm Charts"
+      type: helm
+      insecure: "true"
+    grafana-helm-charts:
+      url: https://grafana.github.io/helm-charts
+      name: "[Ext][Grafana] Helm Charts"
+      type: helm
+      insecure: "true"
+    kiali-helm-charts:
+      url: https://kiali.org/helm-charts
+      name: "[Ext][Kiali] Helm Charts"
+      type: helm
+      insecure: "true"
+    jaegertracing-helm-charts:
+      url: https://jaegertracing.github.io/helm-charts
+      name: "[Ext][Jaeger Tracing] Helm Charts"
+      type: helm
+      insecure: "true"
+    redpanda-helm-charts:
+      url: https://charts.redpanda.com
+      name: "[Ext][Redpanda] Helm Charts"
+      type: helm
+      insecure: "true"
+    kube-logging-helm-charts:
+      url: https://kube-logging.github.io/helm-charts
+      name: "[Ext][Kube Logging] Helm Charts"
+      type: helm
+      insecure: "true"
+    stakater-helm-charts:
+      url: https://stakater.github.io/stakater-charts
+      name: "[Ext][Stakater] Helm Charts"
+      type: helm
+      insecure: "true"
+    hashicorp-helm-charts:
+      url: https://helm.releases.hashicorp.com
+      name: "[Ext][HashiCorp] Helm Charts"
+      type: helm
+      insecure: "true"
+    jenkins-helm-charts:
+      url: https://charts.jenkins.io
+      name: "[Ext][Jenkins] Helm Charts"
+      type: helm
+      insecure: "true"
+    min-io-helm-charts:
+      url: https://charts.min.io
+      name: "[Ext][MinIO] Helm Charts"
+      type: helm
+      insecure: "true"
+    jetstack-helm-charts:
+      url: https://charts.jetstack.io
+      name: "[Ext][JetStack] Helm Charts"
+      type: helm
+      insecure: "true"
+    metallb-helm-charts:
+      url: https://metallb.github.io/metallb
+      name: "[Ext][MetaLB] Helm Charts"
+      type: helm
+      insecure: "true"
+    kedacore-helm-charts:
+      url: https://kedacore.github.io/charts
+      name: "[Ext][KEDA] Helm Charts"
+      type: helm
+      insecure: "true"
+    elastic-helm-charts:
+      url: https://helm.elastic.co
+      name: "[Ext][Elastic] Helm Charts"
+      type: helm
+      insecure: "true"
+    istio-helm-charts:
+      url: https://istio-release.storage.googleapis.com/charts
+      name: "[Ext][Istio] Helm Charts"
+      type: helm
+      insecure: "true"
   cm:
     kustomize.enabled: true
     jsonnet.enabled: true
