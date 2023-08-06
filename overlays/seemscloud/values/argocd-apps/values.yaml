@@ -130,6 +130,9 @@ projects:
       - namespace: "keda-system"
         name: "in-cluster"
         server: https://kubernetes.default.svc
+      - namespace: "kube-system"
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
