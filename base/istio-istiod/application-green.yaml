@@ -1,30 +1,41 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio-base
+  name: istiod-green
   namespace: argocd-system
 spec:
   project: istio-system
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-system
+  info:
+    - name: argocd.seems.cloud/domain
+      value: tools
+    - name: argocd.seems.cloud/team
+      value: devops
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 5
     syncOptions:
       - CreateNamespace=true
   sources:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: base
+    - chart: istiod
       repoURL: https://istio-release.storage.googleapis.com/charts
       targetRevision: 1.17.2
       helm:
-        releaseName: base
+        releaseName: istiod
         valueFiles:
-          - $argocd-self/base/istio-base/values.yaml
+          - $argocd-self/base/istio-istiod/values.yaml
   ignoreDifferences:
     - kind: ValidatingWebhookConfiguration
       group: admissionregistration.k8s.io
