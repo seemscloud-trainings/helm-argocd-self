@@ -92,6 +92,11 @@ configs:
       name: "[Ext][Istio] Helm Charts"
       type: helm
       insecure: "true"
+    crossplane-helm-charts:
+      url: https://charts.crossplane.io/stable
+      name: "[Ext][Crossplane] Helm Charts"
+      type: helm
+      insecure: "true"
   cm:
     kustomize.enabled: true
     jsonnet.enabled: true

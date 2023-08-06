@@ -151,3 +151,17 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
+  - name: crossplane-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
+      - 'https://charts.crossplane.io/stable'
+    destinations:
+      - namespace: "crossplane-system"
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
