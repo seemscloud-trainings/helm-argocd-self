@@ -360,7 +360,7 @@ patches:
           - $argocd-self/overlays/seemscloud/values/logging-redpanda/values.yaml
     target:
       kind: Application
-      name: logging-redpanda-console
+      name: logging-redpanda
   - patch: |-
       - op: add
         path: /spec/sources/1/helm/valueFiles
