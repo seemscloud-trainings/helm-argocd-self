@@ -153,13 +153,13 @@ patches:
         path: /spec/sources/1/helm/valueFiles
         value:
           - $argocd-self/base/istio-kiali/values.yaml
-          - $argocd-self/overlays/seemscloud/values/istio-kiali/values-1-17-0.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-kiali/values-1-17-2.yaml
       - op: replace
         path: /spec/sources/1/helm/releaseName
-        value: kiali-1-17-0
+        value: kiali-1-17-2
       - op: replace
         path: /metadata/name
-        value: istio-kiali-1-17-0
+        value: istio-kiali-1-17-2
     target:
       kind: Application
       name: istio-kiali-blue
