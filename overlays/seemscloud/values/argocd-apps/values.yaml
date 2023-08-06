@@ -79,6 +79,7 @@ projects:
       - 'https://jaegertracing.github.io/helm-charts'
       - 'https://helm.elastic.co'
       - 'https://github.com/seemscloud/helm-argocd-self.git'
+      - 'https://kiali.org/helm-charts '
     destinations:
       - namespace: istio-tracing-system
         name: "in-cluster"
