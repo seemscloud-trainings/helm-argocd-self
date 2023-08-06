@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-ingress-gateway-blue
+  namespace: argocd-system
+spec:
+  project: istio-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      ref: argocd-self
+    - chart: gateway
+      repoURL: https://istio-release.storage.googleapis.com/charts
+      targetRevision: 1.17.1
+      helm:
+        releaseName: ingress-gateway-blue
+        valueFiles:
+          - $argocd-self/base/istio-ingress-gateway/values.yaml
+  ignoreDifferences:
+    - kind: ValidatingWebhookConfiguration
+      group: admissionregistration.k8s.io
+      jsonPointers:
+        - /webhooks/0/failurePolicy
