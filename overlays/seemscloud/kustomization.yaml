@@ -21,6 +21,7 @@ resources:
   - ../../base/istio-kiali
   - ../../base/keda
   - ../../base/logging-redpanda
+  - ../../base/logging-operator
 
 patches:
 ##########################################################################################
@@ -360,3 +361,12 @@ patches:
     target:
       kind: Application
       name: logging-redpanda
+  - patch: |-
+      - op: add
+        path: /spec/sources/1/helm/valueFiles
+        value:
+          - $argocd-self/base/logging-operator/values.yaml
+          - $argocd-self/overlays/seemscloud/values/logging-operator/values.yaml
+    target:
+      kind: Application
+      name: logging-operator

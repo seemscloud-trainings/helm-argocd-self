@@ -49,6 +49,7 @@ projects:
       - resources-finalizer.argocd.argoproj.io
     sourceRepos:
       - 'https://charts.redpanda.com/'
+      - 'https://kube-logging.github.io/helm-charts'
       - 'https://github.com/seemscloud/helm-argocd-self.git'
     destinations:
       - namespace: logging-system
