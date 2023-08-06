@@ -1,0 +1,22 @@
+fullnameOverride: redpanda
+
+serviceAccount:
+  create: true
+
+statefulset:
+  replicas: 3
+
+storage:
+  persistentVolume:
+    enabled: false
+
+external:
+  enabled: false
+
+resources:
+  cpu:
+    cores: 1
+
+  memory:
+    container:
+      max: 2.5Gi
