@@ -33,7 +33,7 @@ spec:
       repoURL: https://istio-release.storage.googleapis.com/charts
       targetRevision: 1.17.1
       helm:
-        releaseName: gateway
+        releaseName: istio-gateway
         valueFiles:
           - $argocd-self/base/istio-gateway/values.yaml
   ignoreDifferences:
@@ -77,7 +77,7 @@ spec:
       repoURL: https://istio-release.storage.googleapis.com/charts
       targetRevision: 1.17.2
       helm:
-        releaseName: gateway
+        releaseName: istio-gateway
         valueFiles:
           - $argocd-self/base/istio-gateway/values.yaml
   ignoreDifferences:
