@@ -97,6 +97,11 @@ configs:
       name: "[Ext][Crossplane] Helm Charts"
       type: helm
       insecure: "true"
+    kyverno-helm-charts:
+      url: https://kyverno.github.io/kyverno/
+      name: "[Ext][Kyverno] Helm Charts"
+      type: helm
+      insecure: "true"
   cm:
     kustomize.enabled: true
     jsonnet.enabled: true
