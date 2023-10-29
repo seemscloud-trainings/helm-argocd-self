@@ -1,0 +1,34 @@
+fullnameOverride: kyverno
+
+crds:
+  install: true
+
+config:
+  create: true
+
+webhooksCleanup:
+  enabled: true
+
+grafana:
+  enabled: false
+
+cleanupJobs:
+  admissionReports:
+    enabled: false
+  clusterAdmissionReports:
+    enabled: false
+
+backgroundController:
+  enabled: false
+
+  rbac:
+    create: true
+
+cleanupController:
+  enabled: false
+
+  rbac:
+    create: true
+
+reportsController:
+  enabled: true
