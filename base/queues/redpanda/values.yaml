@@ -33,6 +33,10 @@ console:
   service:
     type: LoadBalancer
 
+# Each is set to their default values in Redpanda.
+tuning:
+  tune_aio_events: false
+
 config:
   cluster:
     auto_create_topics_enabled: true
