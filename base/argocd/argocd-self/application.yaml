@@ -14,7 +14,7 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-  source:
-    repoURL: https://github.com/seemscloud/helm-argocd-self.git
-    targetRevision: main
-    path: overlays/seemscloud
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      path: overlays/seemscloud
