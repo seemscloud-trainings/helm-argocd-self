@@ -3,11 +3,11 @@ kind: Kustomization
 
 resources:
   - argo-stack/
-  - queues-stack/
-  - metrics-stack/
-  - istio-stack/
-  - istio-metrics-stack/
-  - argo-workflows-stack/
+#  - queues-stack/
+#  - metrics-stack/
+#  - istio-stack/
+#  - istio-metrics-stack/
+#  - argo-workflows-stack/
   - ../../base/metallb
   - ../../base/cert-manager
 #  - ../../../base/keda
