@@ -8,7 +8,7 @@ queryFrontend:
   enabled: true
 
   replicaCount: 2
-  
+
   service:
     type: LoadBalancer
     ports:
