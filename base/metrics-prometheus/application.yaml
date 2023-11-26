@@ -25,4 +25,3 @@ spec:
         releaseName: prometheus
         valueFiles:
           - $argocd-self/base/metrics-prometheus/values.yaml
-          - $argocd-self/overlays/seemscloud/values/metrics-prometheus/values.yaml

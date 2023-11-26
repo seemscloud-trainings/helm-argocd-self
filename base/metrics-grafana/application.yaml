@@ -25,4 +25,3 @@ spec:
         releaseName: grafana
         valueFiles:
           - $argocd-self/base/metrics-grafana/values.yaml
-          - $argocd-self/overlays/seemscloud/values/metrics-grafana/values.yaml

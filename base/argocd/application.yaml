@@ -25,4 +25,3 @@ spec:
         releaseName: argocd
         valueFiles:
           - $argocd-self/base/argocd/values.yaml
-          - $argocd-self/overlays/seemscloud/values/argocd/values.yaml
