@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio-stack/istio-ingress-gateway-blue
+  name: istio-ingress-gateway-blue
   namespace: argocd-system
 spec:
   project: istio-system

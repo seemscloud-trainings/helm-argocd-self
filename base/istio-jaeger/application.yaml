@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio-stack/istio-jaeger
+  name: istio-jaeger
   namespace: argocd-system
 spec:
   project: istio-tracing-system
