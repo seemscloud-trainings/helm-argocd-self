@@ -2,6 +2,4 @@ fullnameOverride: thanos
 
 queryFrontend:
   service:
-    ## @param compactor.service.type Kubernetes service type
-    ##
-    type: ClusterIP
+    type: LoadBalancer
