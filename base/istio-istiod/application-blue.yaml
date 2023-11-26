@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio-istiod-blue
+  name: istio-stack/istio-istiod-blue
   namespace: argocd-system
 spec:
   project: istio-system
