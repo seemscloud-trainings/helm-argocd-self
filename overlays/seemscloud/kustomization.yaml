@@ -2,9 +2,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - argo-stack
-  #  - metrics-stack
-  #  - istio-stack
-  #  - argo-workflows-stack
-  - tools
-  - queues-stack
+  - argo-stack/
+  - queues-stack/
+  #  - metrics-stack/
+  #  - istio-stack/
+  #  - argo-workflows-stack/
+  - ../../base/metallb
+  - ../../base/cert-manager
+#  - ../../../base/keda
+#  - ../../../base/crossplane
