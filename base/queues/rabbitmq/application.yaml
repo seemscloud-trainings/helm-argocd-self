@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rabbitmq
+  namespace: argocd-system
+spec:
+  project: queues-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: queues-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      ref: argocd-self
+    - chart: rabbitmq
+      repoURL: https://charts.bitnami.com/bitnami
+      targetRevision: 12.5.4
+      helm:
+        releaseName: rabbitmq
+        valueFiles:
+          - $argocd-self/base/queues/rabbitmq/values.yaml
