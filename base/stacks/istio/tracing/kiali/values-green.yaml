@@ -14,3 +14,4 @@ external_services:
           namespace: istio-ingressgateway-green-system
       enabled: true
     config_map_name: istio-green
+    istiod_deployment_name: istio-green
