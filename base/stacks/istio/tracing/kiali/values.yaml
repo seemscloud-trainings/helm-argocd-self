@@ -29,3 +29,6 @@ kiali_feature_flags:
 
 server:
   port: 8080
+
+login_token:
+  signing_key: "gIz9tJxrKtaxV0SM"
