@@ -14,4 +14,4 @@ resources:
   #- ../../base/tools/crossplane
   #- ../../base/tools/kyverno
   # Queues
-  - ../../base/queues/redpanda
+  - ../../base/queues
