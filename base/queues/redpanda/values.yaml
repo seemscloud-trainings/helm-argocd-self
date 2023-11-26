@@ -41,3 +41,4 @@ config:
 
   tunable:
     kafka_batch_max_bytes: 10485760
+    log_retention_ms: 360min
