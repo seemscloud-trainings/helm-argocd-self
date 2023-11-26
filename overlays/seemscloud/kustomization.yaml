@@ -5,20 +5,25 @@ resources:
   - ../../base/argocd
   - ../../base/argocd-apps
   - ../../base/argocd-self
+  # Metrics
   #  - ../../base/metrics-prometheus
   #  - ../../base/metrics-grafana
+  # Istio
   #  - ../../base/istio-base
   #  - ../../base/istio-istiod
   #  - ../../base/istio-ingress-gateway
   #  - ../../base/istio-jaeger
   #  - ../../base/istio-elasticsearch
   #  - ../../base/istio-kibana
+  #  - ../../base/istio-kiali
+  # Argo Workflows
   #  - ../../base/argo-events
   #  - ../../base/argo-minio
   #  - ../../base/argo-workflows
+  # Tools
   - ../../base/metallb
   - ../../base/cert-manager
-  #  - ../../base/istio-kiali
   #  - ../../base/keda
-  - ../../base/redpanda
   #  - ../../base/crossplane
+  # Buffers
+  - ../../base/redpanda
