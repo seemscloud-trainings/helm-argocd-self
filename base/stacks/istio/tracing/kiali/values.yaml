@@ -33,19 +33,6 @@ external_services:
   grafana:
     enabled: true
     in_cluster_url: http://grafana.metrics-system:8080
-    dashboards:
-      - name: "Istio Service Dashboard"
-        variables:
-          namespace: "var-namespace"
-          service: "var-service"
-      - name: "Istio Workload Dashboard"
-        variables:
-          namespace: "var-namespace"
-          workload: "var-workload"
-      - name: "Istio Mesh Dashboard"
-      - name: "Istio Control Plane Dashboard"
-      - name: "Istio Performance Dashboard"
-      - name: "Istio Wasm Extension Dashboard"
   prometheus:
     enabled: true
     url: http://prometheus-server.metrics-system:8080
