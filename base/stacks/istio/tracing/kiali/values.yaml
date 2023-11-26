@@ -1,4 +1,4 @@
-fullnameOverride: kiali-blue
+fullnameOverride: kiali
 
 auth:
   strategy: anonymous
