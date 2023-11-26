@@ -7,7 +7,7 @@ resources:
   - ../../base/cert-manager
   #  - queues-stack/
   #  - metrics-stack/
-  #  - istio-stack/
+  - istio-stack/
   #  - istio-metrics-stack/
   #  - argo-workflows-stack/
   - others/
