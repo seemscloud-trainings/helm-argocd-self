@@ -24,4 +24,4 @@ spec:
       helm:
         releaseName: jaeger
         valueFiles:
-          - $argocd-self/base/istio-jaeger/values.yaml
+          - $argocd-self/base/istio-stack/istio/istio-jaeger/values.yaml
