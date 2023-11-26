@@ -24,7 +24,7 @@ spec:
       helm:
         releaseName: base
         valueFiles:
-          - $argocd-self/base/istio-stack/istio/base/values.yaml
+          - $argocd-self/base/stacks/istio/istio/base/values.yaml
   ignoreDifferences:
     - kind: ValidatingWebhookConfiguration
       group: admissionregistration.k8s.io
