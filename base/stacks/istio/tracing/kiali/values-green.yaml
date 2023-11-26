@@ -13,6 +13,7 @@ external_services:
           is_proxy: true
           namespace: istio-ingressgateway-green-system
       enabled: true
+    root_namespace: istio-system
     config_map_name: istio-green
     istiod_deployment_name: istiod-green
     istio_sidecar_injector_config_map_name: istio-sidecar-injector-green
