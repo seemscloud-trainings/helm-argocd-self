@@ -21,13 +21,13 @@ queryFrontend:
     ports:
       http: 8080
 
-#ruler:
-#  enabled: true
-#
-#  replicaCount: 1
-#
-#  serviceAccount:
-#    create: true
+ruler:
+  enabled: true
+
+  replicaCount: 1
+
+  serviceAccount:
+    create: true
 #
 #  service:
 #    type: LoadBalancer
