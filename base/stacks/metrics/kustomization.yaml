@@ -3,5 +3,5 @@ kind: Kustomization
 
 resources:
   - grafana
-  - prometheus
+  - prometheus-operator
   - prometheus-operator-crds
