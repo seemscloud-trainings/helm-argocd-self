@@ -2,3 +2,8 @@ fullnameOverride: prometheus-operator
 
 prometheusOperator:
   createCustomResource: false
+
+global:
+  rbac:
+    create: true
+    pspEnabled: false
