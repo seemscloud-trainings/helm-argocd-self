@@ -7,7 +7,7 @@ resources:
   - ../../base/stacks/argo-workflows
   - ../../base/stacks/metrics
   - ../../base/stacks/istio
-  - ../../base/stacks/queues
   - ../../base/tools/keda
   - ../../base/tools/crossplane
   - ../../base/tools/kyverno
+  - ../../base/queues/redpanda
