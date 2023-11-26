@@ -7,7 +7,7 @@ spec:
   project: redpanda-system
   destination:
     server: https://kubernetes.default.svc
-    namespace: redpanda-system
+    namespace: queues-system
   syncPolicy:
     automated:
       prune: true
