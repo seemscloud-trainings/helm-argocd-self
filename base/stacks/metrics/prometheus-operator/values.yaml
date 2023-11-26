@@ -1,17 +1,4 @@
-fullnameOverride: prometheus
+fullnameOverride: prometheus-operator
 
-alertmanager:
-  enabled: false
-
-prometheus-pushgateway:
-  enabled: false
-
-kube-state-metrics:
-  enabled: false
-
-server:
-  persistentVolume:
-    enabled: false
-  service:
-    servicePort: 8080
-    type: LoadBalancer
+prometheusOperator:
+  createCustomResource: false
