@@ -3,3 +3,5 @@ fullnameOverride: thanos
 queryFrontend:
   service:
     type: LoadBalancer
+    ports:
+      http: 8080
