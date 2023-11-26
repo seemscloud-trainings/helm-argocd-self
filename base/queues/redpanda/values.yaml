@@ -35,9 +35,10 @@ console:
 
 config:
   cluster:
-    default_topic_replications: 3
     auto_create_topics_enabled: true
+    default_topic_replications: 3
     default_topic_partitions: 50
+    log_cleanup_policy: deletion
 
   tunable:
     kafka_batch_max_bytes: 10485760
