@@ -21,8 +21,8 @@ queryFrontend:
     ports:
       http: 8080
 
-ruler:
-  enabled: true
+#ruler:
+#  enabled: true
 #
 #  replicaCount: 1
 #

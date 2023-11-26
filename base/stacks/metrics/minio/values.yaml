@@ -1,0 +1,42 @@
+fullnameOverride: minio
+
+buckets:
+  - name: user01
+    objectlocking: true
+    versioning: true
+
+consoleService:
+  port: 8080
+  type: LoadBalancer
+
+extraVolumeMounts:
+  - mountPath: /export
+    name: emptydir
+
+extraVolumes:
+  - name: emptydir
+
+persistence:
+  enabled: false
+
+policies:
+  - name: user01
+    statements:
+      - actions:
+          - s3:*
+        resources:
+          - arn:aws:s3:::user01
+          - arn:aws:s3:::user01/*
+replicas: 2
+
+rootUser: root
+rootPassword: "Root123!@#"
+
+service:
+  port: 9000
+  type: LoadBalancer
+
+users:
+  - accessKey: user01
+    policy: user01
+    secretKey: "User123!@#"

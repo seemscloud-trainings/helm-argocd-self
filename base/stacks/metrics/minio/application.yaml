@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metrics-minio
+  namespace: argocd-system
+spec:
+  project: metrics-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: metrics-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      ref: argocd-self
+    - chart: minio
+      repoURL: https://charts.min.io
+      targetRevision: 5.0.1
+      helm:
+        releaseName: minio
+        valueFiles:
+          - $argocd-self/base/stacks/metrics/minio/values.yaml
