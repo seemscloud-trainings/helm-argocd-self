@@ -20,3 +20,8 @@ external_services:
     istio_canary_revision:
       current: "blue"
       upgrade: "green"
+  istio_labels:
+    app_label_name: "seems.cloud/app"
+    version_label_name: "seems.cloud/version"
+    injection_label_name: "istio-injection"
+    injection_label_rev: "istio.io/rev"
