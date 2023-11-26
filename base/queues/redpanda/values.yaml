@@ -32,8 +32,8 @@ console:
 
   service:
     type: LoadBalancer
-#
-#config:
-#  cluster:
-#    default_topic_replications: 3
-#    max_message_bytes: 10485760
+
+config:
+  cluster:
+    default_topic_replications: 3
+    max.message.bytes: 10485760
