@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: istio-tracing-system
   syncPolicy:
-#    automated:
-#      prune: true
-#      selfHeal: true
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
   sources:
@@ -20,7 +20,7 @@ spec:
       ref: argocd-self
     - chart: jaeger
       repoURL: https://jaegertracing.github.io/helm-charts
-      targetRevision: 0.65.2
+      targetRevision: 0.72.1
       helm:
         releaseName: jaeger
         valueFiles:
