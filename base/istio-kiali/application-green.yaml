@@ -20,7 +20,7 @@ spec:
       ref: argocd-self
     - chart: kiali-server
       repoURL: https://kiali.org/helm-charts
-      targetRevision: 1.66.0
+      targetRevision: 1.77.0
       helm:
         releaseName: kiali-green
         valueFiles:
