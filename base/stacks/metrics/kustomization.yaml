@@ -5,3 +5,4 @@ resources:
   - grafana
   - prometheus-operator
   - prometheus-operator-crds
+  - prometheus-operator-admission-webhook
