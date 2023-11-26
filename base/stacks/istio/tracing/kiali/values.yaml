@@ -27,7 +27,7 @@ external_services:
           namespace: istio-ingressgateway-green-system
       enabled: true
 #    config_map_name: istio-blue
-    istio_sidecar_injector_config_map_name: istio-sidecar-injector-blue
+#    istio_sidecar_injector_config_map_name: istio-sidecar-injector-blue
 #    istiod_deployment_name: istiod
 
   grafana:
