@@ -24,4 +24,4 @@ spec:
       helm:
         releaseName: kibana
         valueFiles:
-          - $argocd-self/base/stacks/istio/metrics/kibana/values.yaml
+          - $argocd-self/base/stacks/istio/tracing/kibana/values.yaml
