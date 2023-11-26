@@ -18,6 +18,7 @@ projects:
     namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
+      - resources-finalizer.argocd.argoproj.io
     sourceRepos:
       - 'https://prometheus-community.github.io/helm-charts'
       - 'https://grafana.github.io/helm-charts'
@@ -43,16 +44,14 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
-  - name: logging-system
+  - name: redpanda-system
     namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
     sourceRepos:
       - 'https://charts.redpanda.com/'
-      - 'https://kube-logging.github.io/helm-charts'
-      - 'https://github.com/seemscloud/helm-argocd-self.git'
     destinations:
-      - namespace: logging-system
+      - namespace: redpanda-system
         name: "in-cluster"
         server: https://kubernetes.default.svc
     clusterResourceWhitelist:
