@@ -2,6 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - ../../../base/argo/argocd-self
-  - ../../../base/argo/argocd
-  - ../../../base/argo/argocd-apps
+  - ../../../base/argocd/argocd-self
+  - ../../../base/argocd/argocd
+  - ../../../base/argocd/argocd-apps
