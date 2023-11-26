@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: metrics-prometheus-operator
+  name: metrics-thanos
   namespace: argocd-system
 spec:
   project: metrics-system
@@ -18,10 +18,10 @@ spec:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: prometheus-operator
-      repoURL: https://prometheus-community.github.io/helm-charts
-      targetRevision: 9.3.2
+    - chart: thanos
+      repoURL: https://charts.bitnami.com/bitnami
+      targetRevision: 12.16.1
       helm:
-        releaseName: prometheus-operator
+        releaseName: thanos
         valueFiles:
-          - $argocd-self/base/stacks/metrics/prometheus-operator/values.yaml
+          - $argocd-self/base/stacks/metrics/thanos/values.yaml
