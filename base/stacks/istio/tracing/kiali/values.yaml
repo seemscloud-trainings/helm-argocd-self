@@ -7,10 +7,6 @@ deployment:
   service_type: LoadBalancer
 
 external_services:
-  grafana:
-    enabled: true
-    in_cluster_url: http://grafana.metrics-system:8080
-
   istio_canary_revision:
     current: "blue"
     upgrade: "green"
@@ -34,11 +30,22 @@ external_services:
     istio_sidecar_injector_config_map_name: istio-sidecar-injector-blue
     istiod_deployment_name: istiod-blue
 
-#  istio:
-#    component_status:
-#      components: []
-#      enabled: true
-
+  grafana:
+    enabled: true
+    in_cluster_url: http://grafana.metrics-system:8080
+    dashboards:
+      - name: "Istio Service Dashboard"
+        variables:
+          namespace: "var-namespace"
+          service: "var-service"
+      - name: "Istio Workload Dashboard"
+        variables:
+          namespace: "var-namespace"
+          workload: "var-workload"
+      - name: "Istio Mesh Dashboard"
+      - name: "Istio Control Plane Dashboard"
+      - name: "Istio Performance Dashboard"
+      - name: "Istio Wasm Extension Dashboard"
   prometheus:
     enabled: true
     url: http://prometheus-server.metrics-system:8080
