@@ -2,9 +2,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - argo
-#  - metrics
-#  - istio
-#  - argo-workflows
-  - tools
-  - queues
+  - ../../../base/metrics-prometheus
+  - ../../../base/metrics-grafana
