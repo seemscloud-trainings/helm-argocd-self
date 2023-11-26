@@ -8,6 +8,5 @@ resources:
   #  - queues-stack/
   - metrics-stack/
   - istio-stack/
-  #  - istio-metrics-stack/
-  #  - argo-workflows-stack/
+  - argo-workflows-stack/
   - others/
