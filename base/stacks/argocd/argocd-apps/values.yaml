@@ -44,7 +44,7 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
-  - name: redpanda-system
+  - name: queues-system
     namespace: argocd-system
     finalizers:
       - resources-finalizer.argocd.argoproj.io
@@ -52,7 +52,7 @@ projects:
       - 'https://charts.redpanda.com/'
       - 'https://github.com/seemscloud/helm-argocd-self.git'
     destinations:
-      - namespace: redpanda-system
+      - namespace: queues-system
         name: "in-cluster"
         server: https://kubernetes.default.svc
     clusterResourceWhitelist:
