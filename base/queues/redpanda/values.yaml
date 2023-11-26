@@ -10,6 +10,11 @@ storage:
   persistentVolume:
     enabled: false
 
+
+monitoring:
+  enabled: true
+  scrapeInterval: 60s
+
 external:
   enabled: false
 
