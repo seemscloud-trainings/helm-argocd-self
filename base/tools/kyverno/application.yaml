@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: crossplane
+  name: kyverno
   namespace: argocd-system
 spec:
-  project: crossplane-system
+  project: kyverno-system
   destination:
     server: https://kubernetes.default.svc
-    namespace: crossplane-system
+    namespace: kyverno-system
   syncPolicy:
     automated:
       prune: true
@@ -18,10 +18,10 @@ spec:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: crossplane
-      repoURL: https://charts.crossplane.io/stable
-      targetRevision: 1.14.3
+    - chart: kyverno
+      repoURL: https://kyverno.github.io/kyverno/
+      targetRevision: 3.0.5
       helm:
-        releaseName: crossplane
+        releaseName: kyverno
         valueFiles:
-          - $argocd-self/base/keda/values.yaml
+          - $argocd-self/base/tools/kyverno/values.yaml

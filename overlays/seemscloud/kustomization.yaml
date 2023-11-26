@@ -8,5 +8,6 @@ resources:
   - ../../base/stacks/metrics
   - ../../base/stacks/istio
   - ../../base/stacks/queues
-#  - ../../../base/keda
-#  - ../../../base/crossplane
+  - ../../base/tools/keda
+  - ../../base/tools/crossplane
+  - ../../base/tools/kyverno

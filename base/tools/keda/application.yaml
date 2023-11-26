@@ -1,27 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kyverno
+  name: keda
   namespace: argocd-system
 spec:
-  project: kyverno-system
+  project: keda-system
   destination:
     server: https://kubernetes.default.svc
-    namespace: kyverno-system
+    namespace: keda-system
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true
   sources:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: kyverno
-      repoURL: https://kyverno.github.io/kyverno/
-      targetRevision: 3.0.5
+    - chart: keda
+      repoURL: https://kedacore.github.io/charts
+      targetRevision: 2.11.2
       helm:
-        releaseName: kyverno
+        releaseName: keda
         valueFiles:
-          - $argocd-self/base/kyverno/values.yaml
+          - $argocd-self/base/tools/keda/values.yaml

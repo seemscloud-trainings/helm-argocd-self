@@ -1,28 +1,27 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: keda
+  name: crossplane
   namespace: argocd-system
 spec:
-  project: keda-system
+  project: crossplane-system
   destination:
     server: https://kubernetes.default.svc
-    namespace: keda-system
+    namespace: crossplane-system
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-      - ServerSideApply=true
   sources:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: keda
-      repoURL: https://kedacore.github.io/charts
-      targetRevision: 2.11.2
+    - chart: crossplane
+      repoURL: https://charts.crossplane.io/stable
+      targetRevision: 1.14.3
       helm:
-        releaseName: keda
+        releaseName: crossplane
         valueFiles:
-          - $argocd-self/base/keda/values.yaml
+          - $argocd-self/base/tools/keda/values.yaml
