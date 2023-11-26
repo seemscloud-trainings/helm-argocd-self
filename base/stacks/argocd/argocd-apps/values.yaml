@@ -24,6 +24,7 @@ projects:
       - 'https://grafana.github.io/helm-charts'
       - 'https://github.com/seemscloud/helm-argocd-self.git'
       - 'https://charts.bitnami.com/bitnami'
+      - 'https://charts.min.io'
     destinations:
       - namespace: metrics-system
         name: "in-cluster"
