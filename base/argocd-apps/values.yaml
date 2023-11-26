@@ -50,6 +50,7 @@ projects:
       - resources-finalizer.argocd.argoproj.io
     sourceRepos:
       - 'https://charts.redpanda.com/'
+      - 'https://github.com/seemscloud/helm-argocd-self.git'
     destinations:
       - namespace: redpanda-system
         name: "in-cluster"
