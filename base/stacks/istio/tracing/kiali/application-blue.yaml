@@ -25,3 +25,4 @@ spec:
         releaseName: kiali
         valueFiles:
           - $argocd-self/base/stacks/istio/tracing/kiali/values.yaml
+          - $argocd-self/base/stacks/istio/tracing/kiali/values-blue.yaml
