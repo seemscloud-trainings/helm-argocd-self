@@ -1,0 +1,14 @@
+fullnameOverride: kiali-blue
+
+external_services:
+  istio:
+    component_status:
+      components:
+        - app_label: ingress-gateway-blue
+          is_core: true
+          is_proxy: true
+          namespace: istio-system
+      enabled: true
+    config_map_name: istio-blue
+    istio_sidecar_injector_config_map_name: istio-sidecar-injector-blue
+    istiod_deployment_name: istiod-blue

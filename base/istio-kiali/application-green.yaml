@@ -25,3 +25,4 @@ spec:
         releaseName: kiali-green
         valueFiles:
           - $argocd-self/base/istio-kiali/values.yaml
+          - $argocd-self/base/istio-kiali/values-green.yaml

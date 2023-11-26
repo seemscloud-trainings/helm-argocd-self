@@ -25,3 +25,4 @@ spec:
         releaseName: cert-manager
         valueFiles:
           - $argocd-self/base/cert-manager/values.yaml
+          - $argocd-self/overlays/seemscloud/values/cert-manager/values.yaml

@@ -1,0 +1,14 @@
+fullnameOverride: kiali-green
+
+external_services:
+  istio:
+    component_status:
+      components:
+        - app_label: ingress-gateway-green
+          is_core: true
+          is_proxy: true
+          namespace: istio-system
+      enabled: true
+    config_map_name: istio-green
+    istio_sidecar_injector_config_map_name: istio-sidecar-injector-green
+    istiod_deployment_name: istiod-green

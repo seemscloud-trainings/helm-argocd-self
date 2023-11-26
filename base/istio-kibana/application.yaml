@@ -25,3 +25,4 @@ spec:
         releaseName: kibana
         valueFiles:
           - $argocd-self/base/istio-kibana/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-kibana/values.yaml

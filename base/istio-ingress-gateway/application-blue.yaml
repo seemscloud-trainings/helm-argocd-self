@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: istio-system
   syncPolicy:
-    #    automated:
-    #      prune: true
-    #      selfHeal: true
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
   sources:
@@ -25,6 +25,7 @@ spec:
         releaseName: ingress-gateway-blue
         valueFiles:
           - $argocd-self/base/istio-ingress-gateway/values.yaml
+          - $argocd-self/base/istio-ingress-gateway/values-blue.yaml
   ignoreDifferences:
     - kind: ValidatingWebhookConfiguration
       group: admissionregistration.k8s.io

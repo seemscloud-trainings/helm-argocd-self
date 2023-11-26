@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: metrics-system
   syncPolicy:
-    # automated:
-    #   prune: true
-    #   selfHeal: true
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
   sources:
@@ -25,3 +25,4 @@ spec:
         releaseName: prometheus
         valueFiles:
           - $argocd-self/base/metrics-prometheus/values.yaml
+          - $argocd-self/overlays/seemscloud/values/metrics-prometheus/values.yaml

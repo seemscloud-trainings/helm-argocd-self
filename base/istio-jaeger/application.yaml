@@ -25,3 +25,4 @@ spec:
         releaseName: jaeger
         valueFiles:
           - $argocd-self/base/istio-jaeger/values.yaml
+          - $argocd-self/overlays/seemscloud/values/istio-jaeger/values.yaml
