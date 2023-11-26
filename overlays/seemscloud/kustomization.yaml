@@ -5,20 +5,20 @@ resources:
   - ../../base/argocd
   - ../../base/argocd-apps
   - ../../base/argocd-self
-  - ../../base/metrics-prometheus
-  - ../../base/metrics-grafana
-  - ../../base/istio-base
-  - ../../base/istio-istiod
-  - ../../base/istio-ingress-gateway
-  - ../../base/istio-jaeger
-  - ../../base/istio-elasticsearch
-  - ../../base/istio-kibana
-  - ../../base/argo-events
-  - ../../base/argo-minio
-  - ../../base/argo-workflows
+  #  - ../../base/metrics-prometheus
+  #  - ../../base/metrics-grafana
+  #  - ../../base/istio-base
+  #  - ../../base/istio-istiod
+  #  - ../../base/istio-ingress-gateway
+  #  - ../../base/istio-jaeger
+  #  - ../../base/istio-elasticsearch
+  #  - ../../base/istio-kibana
+  #  - ../../base/argo-events
+  #  - ../../base/argo-minio
+  #  - ../../base/argo-workflows
   - ../../base/metallb
   - ../../base/cert-manager
-  - ../../base/istio-kiali
-  - ../../base/keda
+  #  - ../../base/istio-kiali
+  #  - ../../base/keda
   - ../../base/redpanda
-  - ../../base/crossplane
+  #  - ../../base/crossplane
