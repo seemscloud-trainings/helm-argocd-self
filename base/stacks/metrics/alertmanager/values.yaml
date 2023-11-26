@@ -19,7 +19,6 @@ config:
   enabled: true
   global:
     resolve_timeout: 1m
-    slack_api_url: 'https://hooks.slack.com/services/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'
 
   templates:
     - '/etc/alertmanager/*.tmpl'
@@ -28,14 +27,14 @@ config:
     - name: 'slack-notifications'
       slack_configs:
         - channel: '#notifications'
+          api_url: 'https://hooks.slack.com/services/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'
           send_resolved: true
-          title: |-
-            test
-          text: >-
-            test
+          text: "text"
+          title: "Title"
 
   route:
-    group_wait: 10s
-    group_interval: 5m
     receiver: 'slack-notifications'
-    repeat_interval: 3h
+    group_by:
+      - 'namespace_name'
+      - 'cluster_name'
+      - 'severity'
