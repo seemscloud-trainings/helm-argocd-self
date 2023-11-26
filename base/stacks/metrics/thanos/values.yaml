@@ -23,11 +23,11 @@ queryFrontend:
 
 ruler:
   enabled: true
-
-  replicaCount: 1
-
-  serviceAccount:
-    create: true
+#
+#  replicaCount: 1
+#
+#  serviceAccount:
+#    create: true
 #
 #  service:
 #    type: LoadBalancer
