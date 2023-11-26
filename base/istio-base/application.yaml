@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: istio-system
   syncPolicy:
-    #    automated:
-    #      prune: true
-    #      selfHeal: true
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
   sources:
@@ -20,7 +20,7 @@ spec:
       ref: argocd-self
     - chart: base
       repoURL: https://istio-release.storage.googleapis.com/charts
-      targetRevision: 1.17.2
+      targetRevision: 1.19.4
       helm:
         releaseName: base
         valueFiles:
