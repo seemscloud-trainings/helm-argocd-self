@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: object-storage-minio
+data:
+  game.properties: |-
+    type: S3
+    config:
+      bucket: "user01"
+      endpoint: "minio:9000"
+      access_key: "user01"
+      insecure: true
+      encrypt_sse: false
+      secret_key: "User123!@#"

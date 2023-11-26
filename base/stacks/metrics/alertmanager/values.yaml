@@ -1,0 +1,36 @@
+fullnameOverride: thanos
+
+query:
+  enabled: true
+
+  replicaCount: 2
+
+  serviceAccount:
+    create: true
+
+queryFrontend:
+  enabled: true
+
+  replicaCount: 2
+
+  serviceAccount:
+    create: true
+
+  service:
+    type: LoadBalancer
+    ports:
+      http: 8080
+
+ruler:
+  enabled: true
+
+  replicaCount: 1
+
+  serviceAccount:
+    create: true
+
+  service:
+    type: LoadBalancer
+
+    ports:
+      http: 8080
