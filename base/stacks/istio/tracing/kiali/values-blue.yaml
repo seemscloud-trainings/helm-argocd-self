@@ -7,7 +7,7 @@ external_services:
         - app_label: ingress-gateway-blue
           is_core: true
           is_proxy: true
-          namespace: istio-system
+          namespace: istio-ingressgateway-blue-system
       enabled: true
     config_map_name: istio-blue
     istio_sidecar_injector_config_map_name: istio-sidecar-injector-blue
