@@ -4,7 +4,7 @@ metadata:
   name: redpanda
   namespace: argocd-system
 spec:
-  project: redpanda-system
+  project: queues-system
   destination:
     server: https://kubernetes.default.svc
     namespace: queues-system
