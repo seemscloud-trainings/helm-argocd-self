@@ -24,4 +24,4 @@ spec:
       helm:
         releaseName: elasticsearch
         valueFiles:
-          - $argocd-self/base/istio-stack/metrics/elasticsearch/values.yaml
+          - $argocd-self/base/stacks/istio/metrics/elasticsearch/values.yaml
