@@ -6,7 +6,7 @@ resources:
   - ../../base/metallb
   - ../../base/cert-manager
   #  - queues-stack/
-  #  - metrics-stack/
+  - metrics-stack/
   - istio-stack/
   #  - istio-metrics-stack/
   #  - argo-workflows-stack/
