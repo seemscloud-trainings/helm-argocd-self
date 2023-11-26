@@ -1,8 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-
-resources:
-  - ../../../../base/istio-stack/metrics/jaeger
-  - ../../../../base/istio-stack/metrics/elasticsearch
-  - ../../../../base/istio-stack/metrics/kibana
-  - ../../../../base/istio-stack/metrics/kiali

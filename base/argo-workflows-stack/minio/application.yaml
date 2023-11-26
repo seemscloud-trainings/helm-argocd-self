@@ -24,4 +24,4 @@ spec:
       helm:
         releaseName: minio
         valueFiles:
-          - $argocd-self/base/argo-minio/values.yaml
+          - $argocd-self/base/argo-workflows-stack/minio/values.yaml

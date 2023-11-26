@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-workflows
+  name: argo-events
   namespace: argocd-system
 spec:
   project: argo-workflows-system
@@ -18,10 +18,10 @@ spec:
     - repoURL: https://github.com/seemscloud/helm-argocd-self.git
       targetRevision: main
       ref: argocd-self
-    - chart: argo-workflows
+    - chart: argo-events
       repoURL: https://argoproj.github.io/argo-helm
-      targetRevision: 0.25.1
+      targetRevision: 2.2.0
       helm:
-        releaseName: argo-workflows
+        releaseName: argo-events
         valueFiles:
-          - $argocd-self/base/argo-workflows/values.yaml
+          - $argocd-self/base/argo-workflows-stack/events/values.yaml
