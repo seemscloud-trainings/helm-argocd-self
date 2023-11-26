@@ -1,6 +1,14 @@
 fullnameOverride: thanos
 
+query:
+  enabled: true
+  replicaCount: 2
+
 queryFrontend:
+  enabled: true
+
+  replicaCount: 2
+  
   service:
     type: LoadBalancer
     ports:
