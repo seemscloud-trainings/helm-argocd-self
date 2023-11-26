@@ -51,6 +51,7 @@ projects:
     sourceRepos:
       - 'https://charts.redpanda.com/'
       - 'https://github.com/seemscloud/helm-argocd-self.git'
+      - 'https://charts.bitnami.com/bitnami'
     destinations:
       - namespace: queues-system
         name: "in-cluster"
