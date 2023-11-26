@@ -36,4 +36,6 @@ console:
 config:
   cluster:
     default_topic_replications: 3
+    
+  tunable:
     kafka_batch_max_bytes: 10485760
