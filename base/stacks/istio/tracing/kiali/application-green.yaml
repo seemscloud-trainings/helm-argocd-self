@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio-kiali
+  name: istio-kiali-green
   namespace: argocd-system
 spec:
   project: istio-tracing-system
@@ -22,7 +22,7 @@ spec:
       repoURL: https://kiali.org/helm-charts
       targetRevision: 1.77.0
       helm:
-        releaseName: kiali
+        releaseName: kiali-green
         valueFiles:
           - $argocd-self/base/stacks/istio/tracing/kiali/values.yaml
           - $argocd-self/base/stacks/istio/tracing/kiali/values-green.yaml
