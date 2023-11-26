@@ -2,12 +2,19 @@ fullnameOverride: thanos
 
 query:
   enabled: true
+
   replicaCount: 2
+
+  serviceAccount:
+    create: true
 
 queryFrontend:
   enabled: true
 
   replicaCount: 2
+
+  serviceAccount:
+    create: true
 
   service:
     type: LoadBalancer
