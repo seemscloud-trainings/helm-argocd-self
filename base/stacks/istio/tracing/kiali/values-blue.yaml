@@ -1,6 +1,9 @@
 fullnameOverride: kiali-blue
 
 external_services:
+  istio_canary_revision:
+    current: "blue"
+    upgrade: "green"
   istio:
     component_status:
       components:
