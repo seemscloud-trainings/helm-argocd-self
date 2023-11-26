@@ -1,4 +1,4 @@
-fullnameOverride: thanos
+fullnameOverride: alertmanager
 
 query:
   enabled: true
