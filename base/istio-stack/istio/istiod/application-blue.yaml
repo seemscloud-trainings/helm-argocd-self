@@ -24,8 +24,8 @@ spec:
       helm:
         releaseName: istiod-blue
         valueFiles:
-          - $argocd-self/base/istio-istiod/values.yaml
-          - $argocd-self/base/istio-istiod/values-blue.yaml
+          - $argocd-self/base/istio-stack/istio/istio-istiod/values.yaml
+          - $argocd-self/base/istio-stack/istio/istio-istiod/values-blue.yaml
   ignoreDifferences:
     - kind: ValidatingWebhookConfiguration
       group: admissionregistration.k8s.io

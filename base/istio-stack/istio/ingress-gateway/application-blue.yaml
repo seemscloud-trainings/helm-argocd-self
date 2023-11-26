@@ -24,8 +24,8 @@ spec:
       helm:
         releaseName: ingress-gateway-blue
         valueFiles:
-          - $argocd-self/base/istio-ingress-gateway/values.yaml
-          - $argocd-self/base/istio-ingress-gateway/values-blue.yaml
+          - $argocd-self/base/istio-stack/istio-ingress-gateway/values.yaml
+          - $argocd-self/base/istio-stack/istio/istio-ingress-gateway/values-blue.yaml
   ignoreDifferences:
     - kind: ValidatingWebhookConfiguration
       group: admissionregistration.k8s.io
