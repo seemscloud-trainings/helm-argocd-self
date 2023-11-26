@@ -24,4 +24,4 @@ spec:
       helm:
         releaseName: argocd-apps
         valueFiles:
-          - $argocd-self/base/argocd/argocd-apps/values.yaml
+          - $argocd-self/base/stacks/argocd/argocd-apps/values.yaml

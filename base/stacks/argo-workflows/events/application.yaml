@@ -24,4 +24,4 @@ spec:
       helm:
         releaseName: argo-events
         valueFiles:
-          - $argocd-self/base/argo-workflows-stack/events/values.yaml
+          - $argocd-self/base/stacks/argo-workflows-stack/events/values.yaml

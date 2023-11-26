@@ -24,4 +24,4 @@ spec:
       helm:
         releaseName: argo-workflows
         valueFiles:
-          - $argocd-self/base/argo-workflows-stack/workflows/values.yaml
+          - $argocd-self/base/stacks/argo-workflows-stack/workflows/values.yaml
