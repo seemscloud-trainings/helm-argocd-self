@@ -29,6 +29,10 @@ config:
       slack_configs:
         - channel: '#notifications'
           send_resolved: true
+          title: |-
+            test
+          text: >-
+            test
 
   route:
     group_wait: 10s
