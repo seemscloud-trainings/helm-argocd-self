@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../../../base/istio-stack/istio/base
+  - ../../../../base/istio-stack/istio/istiod
+  - ../../../../base/istio-stack/istio/ingress-gateway
