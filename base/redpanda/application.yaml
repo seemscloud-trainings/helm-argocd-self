@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: logging-redpanda
+  name: redpanda
   namespace: argocd-system
 spec:
-  project: logging-system
+  project: redpanda-system
   destination:
     server: https://kubernetes.default.svc
-    namespace: logging-system
+    namespace: redpanda-system
   syncPolicy:
-#    automated:
-#      prune: true
-#      selfHeal: true
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
   sources:
@@ -20,8 +20,8 @@ spec:
       ref: argocd-self
     - chart: redpanda
       repoURL: https://charts.redpanda.com/
-      targetRevision: 5.0.8
+      targetRevision: 5.6.48
       helm:
         releaseName: redpanda
         valueFiles:
-          - $argocd-self/base/logging-redpanda/values.yaml
+          - $argocd-self/base/redpanda/values.yaml

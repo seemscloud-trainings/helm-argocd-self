@@ -20,5 +20,5 @@ resources:
   - ../../base/cert-manager
   - ../../base/istio-kiali
   - ../../base/keda
-  - ../../base/logging-redpanda
+  - ../../base/redpanda
   - ../../base/crossplane
