@@ -20,7 +20,7 @@ spec:
       ref: argocd-self
     - chart: gateway
       repoURL: https://istio-release.storage.googleapis.com/charts
-      targetRevision: 1.17.1
+      targetRevision: 1.19.4
       helm:
         releaseName: ingress-gateway-blue
         valueFiles:

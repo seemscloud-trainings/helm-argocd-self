@@ -20,7 +20,7 @@ spec:
       ref: argocd-self
     - chart: istiod
       repoURL: https://istio-release.storage.googleapis.com/charts
-      targetRevision: 1.19.4
+      targetRevision: 1.19.3
       helm:
         releaseName: istiod-green
         valueFiles:
