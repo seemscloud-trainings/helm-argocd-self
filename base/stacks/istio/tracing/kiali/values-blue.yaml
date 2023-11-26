@@ -16,3 +16,6 @@ external_services:
     config_map_name: istio-blue
     istiod_deployment_name: istiod-blue
     istio_sidecar_injector_config_map_name: istio-sidecar-injector-blue
+    istio_canary_revision:
+      current: "blue"
+      upgrade: "green"
