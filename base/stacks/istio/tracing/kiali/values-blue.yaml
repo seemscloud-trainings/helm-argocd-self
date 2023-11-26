@@ -14,4 +14,4 @@ external_services:
           namespace: istio-ingressgateway-blue-system
       enabled: true
     config_map_name: istio-blue
-    istiod_deployment_name: istio-blue
+    istiod_deployment_name: istiod-blue
