@@ -5,5 +5,4 @@ resources:
   - stacks/
   - ../../base/metallb
   - ../../base/cert-manager
-  - queues-stack/
   - others/
