@@ -24,8 +24,8 @@ spec:
       helm:
         releaseName: istiod-green
         valueFiles:
-          - $argocd-self/base/istio-stack/istio/istio-istiod/values.yaml
-          - $argocd-self/base/istio-stack/istio/istio-istiod/values-green.yaml
+          - $argocd-self/base/istio-stack/istio/istiod/values.yaml
+          - $argocd-self/base/istio-stack/istio/istiod/values-green.yaml
   ignoreDifferences:
     - kind: ValidatingWebhookConfiguration
       group: admissionregistration.k8s.io
