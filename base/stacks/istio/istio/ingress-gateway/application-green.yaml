@@ -7,7 +7,7 @@ spec:
   project: istio-system
   destination:
     server: https://kubernetes.default.svc
-    namespace: istio-green-system
+    namespace: istio-istiod-green-system
   syncPolicy:
     automated:
       prune: true
