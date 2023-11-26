@@ -10,6 +10,8 @@ persistence:
 
 service:
   type: LoadBalancer
+  extraPorts:
+    - 8080
 
 configmapReload:
   enabled: true
