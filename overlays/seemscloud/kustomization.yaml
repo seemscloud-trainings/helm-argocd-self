@@ -11,6 +11,5 @@ resources:
   - ../../base/stacks/metrics
   - ../../base/stacks/istio
   - ../../base/stacks/queues
-  - others/
 #  - ../../../base/keda
 #  - ../../../base/crossplane
