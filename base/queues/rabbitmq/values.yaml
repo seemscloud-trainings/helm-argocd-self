@@ -16,6 +16,7 @@ persistence:
 auth:
   username: user
   password: "Admin101123"
+  erlangCookie: "Ih0wplVwoBGLAW0JibgNhSE97vB3Sktl"
 
 serviceAccount:
   create: true
