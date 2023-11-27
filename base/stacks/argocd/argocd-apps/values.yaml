@@ -193,6 +193,7 @@ projects:
       - 'https://github.com/seemscloud/helm-argocd-self.git'
       - 'https://fluent.github.io/helm-charts'
       - 'https://helm.elastic.co'
+      - 'https://charts.redpanda.com'
     destinations:
       - namespace: "logging-system"
         name: "in-cluster"
