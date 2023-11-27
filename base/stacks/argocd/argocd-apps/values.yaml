@@ -192,6 +192,7 @@ projects:
     sourceRepos:
       - 'https://github.com/seemscloud/helm-argocd-self.git'
       - 'https://fluent.github.io/helm-charts'
+      - 'https://helm.elastic.co'
     destinations:
       - namespace: "logging-system"
         name: "in-cluster"
