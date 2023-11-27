@@ -1,0 +1,51 @@
+fullnameOverride: redpanda
+
+serviceAccount:
+  create: true
+
+statefulset:
+  replicas: 3
+
+storage:
+  persistentVolume:
+    enabled: false
+
+monitoring:
+  enabled: false
+  scrapeInterval: 60s
+
+external:
+  enabled: false
+
+resources:
+  cpu:
+    cores: 1
+
+  memory:
+    container:
+      max: 2.5Gi
+
+tls:
+  enabled: false
+
+console:
+  enabled: true
+
+  serviceAccount:
+    create: true
+
+  service:
+    type: LoadBalancer
+
+tuning:
+  tune_aio_events: false
+
+config:
+  cluster:
+    auto_create_topics_enabled: true
+    default_topic_replications: 3
+    default_topic_partitions: 50
+
+  tunable:
+    kafka_batch_max_bytes: 10485760
+    delete_retention_ms: 21600000

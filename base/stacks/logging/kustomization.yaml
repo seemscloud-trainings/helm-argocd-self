@@ -7,3 +7,4 @@ resources:
   - eck-operator
   - eck-operator-crds
   - fluent-bit
+  - redpanda
