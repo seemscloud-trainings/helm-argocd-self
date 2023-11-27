@@ -33,7 +33,7 @@ config:
           title: "Title"
 
   route:
-    receiver: 'slack-notifications'
+    receiver: 'slack-seemscloud-notifications'
     routes:
       - receiver: 'slack-seemscloud-notifications'
         group_by:
