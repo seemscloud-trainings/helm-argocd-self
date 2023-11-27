@@ -193,7 +193,7 @@ config:
     [OUTPUT]
         Name                          kafka
         Match                         kubernetes.*
-        Brokers                       redpanda.queues-system.svc:9093
+        Brokers                       redpanda:9093
         Topics                        logs
         Workers                       3
         rdkafka.compression.codec     gzip
