@@ -11,7 +11,7 @@ storage:
     enabled: false
 
 monitoring:
-  enabled: true
+  enabled: false
   scrapeInterval: 60s
 
 external:
