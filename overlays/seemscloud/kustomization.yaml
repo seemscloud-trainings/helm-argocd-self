@@ -9,7 +9,7 @@ resources:
   - ../../base/stacks/argo-workflows
   - ../../base/stacks/metrics
   - ../../base/stacks/logging
-  #- ../../base/stacks/istio
+  - ../../base/stacks/istio
   # Tools
   #- ../../base/tools/keda
   #- ../../base/tools/crossplane

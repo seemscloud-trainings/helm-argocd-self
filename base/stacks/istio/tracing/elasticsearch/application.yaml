@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio-elasticsearch
+  name: elasticsearch
   namespace: argocd-system
 spec:
   project: istio-tracing-system
