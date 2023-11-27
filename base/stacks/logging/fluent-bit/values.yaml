@@ -1,1 +1,71 @@
 fullnameOverride: fluent-bit
+
+rbac:
+  create: true
+  nodeAccess: true
+  eventsAccess: true
+
+serviceAccount:
+  create: true
+
+image:
+  tag: 2.1.8-debug
+
+terminationGracePeriodSeconds: 1
+
+updateStrategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxUnavailable: 100%
+
+#serviceMonitor:
+#  enabled: true
+#  interval: 30s
+#  scrapeTimeout: 10s
+
+env:
+  - name: CUSTOM_NODE_NAME
+    valueFrom:
+      fieldRef:
+        fieldPath: spec.nodeName
+  - name: CUSTOM_NODE_ADDRESS
+    valueFrom:
+      fieldRef:
+        fieldPath: status.hostIP
+  - name: CUSTOM_AGENT_NAME
+    valueFrom:
+      fieldRef:
+        fieldPath: metadata.name
+
+tolerations:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/infra
+
+volumeMounts:
+  - name: config
+    mountPath: /fluent-bit/etc/conf
+
+daemonSetVolumes:
+  - name: varlogfluentbit
+    hostPath:
+      path: /var/log/fluentbit
+      type: DirectoryOrCreate
+  - name: varlogcontainers
+    hostPath:
+      path: /var/log/containers
+  - name: varlogpods
+    hostPath:
+      path: /var/log/pods
+
+daemonSetVolumeMounts:
+  - name: varlogfluentbit
+    mountPath: /var/log/fluentbit
+    readOnly: false
+  - name: varlogcontainers
+    mountPath: /var/log/containers
+    readOnly: true
+  - name: varlogpods
+    mountPath: /var/log/pods
+    readOnly: true
