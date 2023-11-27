@@ -8,6 +8,7 @@ resources:
   - ../../base/stacks/argocd
   #- ../../base/stacks/argo-workflows
   - ../../base/stacks/metrics
+  - ../../base/stacks/logging
   #- ../../base/stacks/istio
   # Tools
   #- ../../base/tools/keda
