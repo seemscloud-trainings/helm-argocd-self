@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: eck-operator-crds
+  namespace: argocd-system
+spec:
+  project: logging-system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: logging-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  sources:
+    - repoURL: https://github.com/seemscloud/helm-argocd-self.git
+      targetRevision: main
+      ref: argocd-self
+    - chart: eck-operator-crds
+      repoURL: https://helm.elastic.co
+      targetRevision: 2.10.0
+      helm:
+        releaseName: eck-operator-crds
+        valueFiles:
+          - $argocd-self/base/stacks/logging/eck-operator-crds/values.yaml
