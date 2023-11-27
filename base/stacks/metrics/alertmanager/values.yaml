@@ -33,11 +33,12 @@ config:
           title: "Title"
 
   route:
-    receiver: 'slack-notifications'
-    group_by:
-      - 'namespace_name'
-      - 'cluster_name'
-      - 'severity'
-    matchers:
-      - name: namespace
-        value: test
+    routes:
+      - receiver: 'slack-notifications'
+        group_by:
+          - 'namespace_name'
+          - 'cluster_name'
+          - 'severity'
+        matchers:
+          - name: namespace
+            value: test
