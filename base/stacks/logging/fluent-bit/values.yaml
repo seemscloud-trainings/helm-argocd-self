@@ -12,7 +12,7 @@ image:
   tag: 2.1.8-debug
 
 hotReload:
-  enabled: false
+  enabled: true
   image:
     repository: ghcr.io/jimmidyson/configmap-reload
     tag: v0.11.1
