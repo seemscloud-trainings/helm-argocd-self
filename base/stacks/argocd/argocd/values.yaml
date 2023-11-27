@@ -4,6 +4,11 @@ configs:
   repositories:
     seemscloud-app-argocd-self:
       url: https://github.com/seemscloud/helm-argocd-self.git
+      name: "[SeemsCloud][App] Argo Self Components"
+      type: git
+      insecure: "true"
+    seemscloud-app-argocd-self-components:
+      url: https://github.com/seemscloud-trainings/helm-argocd-self-components.git
       name: "[SeemsCloud][App] Argo Self"
       type: git
       insecure: "true"

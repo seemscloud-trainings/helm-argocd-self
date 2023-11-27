@@ -201,3 +201,16 @@ projects:
     clusterResourceWhitelist:
       - group: '*'
         kind: '*'
+  - name: components-system
+    namespace: argocd-system
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    sourceRepos:
+      - 'https://github.com/seemscloud-trainings/helm-argocd-self-components.git'
+    destinations:
+      - namespace: "components-system"
+        name: "in-cluster"
+        server: https://kubernetes.default.svc
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
