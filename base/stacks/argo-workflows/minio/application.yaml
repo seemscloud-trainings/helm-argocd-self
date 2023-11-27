@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-minio
+  name: minio
   namespace: argocd-system
 spec:
   project: argo-workflows-system
