@@ -33,6 +33,7 @@ config:
           title: "Title"
 
   route:
+    receiver: 'slack-notifications'
     routes:
       - receiver: 'slack-notifications'
         group_by:
