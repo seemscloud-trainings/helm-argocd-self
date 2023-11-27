@@ -40,4 +40,4 @@ config:
           - 'cluster_name'
           - 'severity'
         matchers:
-          namespace_name: test
+          - namespace_name: test
