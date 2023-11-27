@@ -37,8 +37,9 @@ config:
     routes:
       - receiver: 'slack-seemscloud-notifications'
         group_by:
+          - 'alertname'
+          - 'severity'
           - 'namespace_name'
           - 'cluster_name'
-          - 'severity'
         match:
           namespace_name: test
