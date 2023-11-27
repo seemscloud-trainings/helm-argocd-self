@@ -39,7 +39,8 @@ env:
 
 tolerations:
   - effect: NoSchedule
-    key: dedicated=control-plane
+    key: dedicated
+    value: control-plane
 
 volumeMounts:
   - name: config
