@@ -27,7 +27,7 @@ config:
     - name: 'slack-seemscloud-notifications'
       slack_configs:
         - channel: '#notifications'
-          api_url: 'https://hooks.slack.com/services/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'
+          api_url: 'https://hooks.slack.com/services/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'
           send_resolved: true
           text: "text"
           title: "Title"
