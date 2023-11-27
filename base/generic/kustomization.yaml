@@ -6,4 +6,3 @@ namePrefix: generic-
 resources:
   - cert-manager
   - metallb
-  - components
