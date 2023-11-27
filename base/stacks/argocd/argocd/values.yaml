@@ -102,6 +102,13 @@ configs:
       name: "[Ext][Kyverno] Helm Charts"
       type: helm
       insecure: "true"
+    fluent-helm-charts:
+      url: https://fluent.github.io/helm-charts
+      name: "[Ext][Fluent] Helm Charts"
+      type: helm
+      insecure: "true"
+
+      #
   cm:
     kustomize.enabled: true
     jsonnet.enabled: true
