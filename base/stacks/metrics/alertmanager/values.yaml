@@ -39,5 +39,5 @@ config:
           - 'namespace_name'
           - 'cluster_name'
           - 'severity'
-        matchers:
-          - namespace_name: test
+        match:
+          namespace_name: test
