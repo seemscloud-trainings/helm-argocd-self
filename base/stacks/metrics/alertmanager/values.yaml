@@ -24,6 +24,11 @@ config:
     - '/etc/alertmanager/*.tmpl'
 
   receivers:
+    - name: "redpanda-"
+      webhook_configs:
+        url: "http://redpanda.queues-system.svc:8082/topics/notifications"
+        http_config:
+
     - name: 'slack-seemscloud-notifications'
       slack_configs:
         - channel: '#notifications'
