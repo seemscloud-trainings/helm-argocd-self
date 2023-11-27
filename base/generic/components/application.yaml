@@ -16,5 +16,5 @@ spec:
       - CreateNamespace=true
   sources:
     - repoURL: https://github.com/seemscloud-trainings/helm-argocd-self-components.git
-      ref: argocd-self
+      targetRevision: main
       path: overlays/seemscloud
