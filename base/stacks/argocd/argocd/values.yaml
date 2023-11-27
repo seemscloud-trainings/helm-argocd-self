@@ -7,108 +7,102 @@ configs:
       name: "[SeemsCloud][App] Argo Self"
       type: git
       insecure: "true"
-    argoproj-helm-charts:
+    ext-helm-argoproj:
       url: https://argoproj.github.io/argo-helm
-      name: "[Ext][ArgoProj] Helm Charts"
+      name: "[Ext][Helm] ArgoProj"
       type: helm
       insecure: "true"
-    bitnami-helm-charts:
+    ext-helm-bitnami:
       url: https://charts.bitnami.com/bitnami
-      name: "[Ext][Bitnami] Helm Charts"
+      name: "[Ext][Helm] Bitnami"
       type: helm
       insecure: "true"
-    prometheus-community-helm-charts:
+    ext-helm-prometheus-community:
       url: https://prometheus-community.github.io/helm-charts
-      name: "[Ext][Prometheus Community] Helm Charts"
+      name: "[Ext][Helm] Prometheus Community"
       type: helm
       insecure: "true"
-    grafana-helm-charts:
+    ext-helm-grafana:
       url: https://grafana.github.io/helm-charts
-      name: "[Ext][Grafana] Helm Charts"
+      name: "[Ext][Helm] Grafana"
       type: helm
       insecure: "true"
-    kiali-helm-charts:
+    ext-helm-kiali:
       url: https://kiali.org/helm-charts
-      name: "[Ext][Kiali] Helm Charts"
+      name: "[Ext][Helm] Kiali"
       type: helm
       insecure: "true"
-    jaegertracing-helm-charts:
+    ext-helm-jaegertracing:
       url: https://jaegertracing.github.io/helm-charts
-      name: "[Ext][Jaeger Tracing] Helm Charts"
+      name: "[Ext][Helm] Jaeger Tracing"
       type: helm
       insecure: "true"
-    redpanda-helm-charts:
+    ext-helm-redpanda:
       url: https://charts.redpanda.com
-      name: "[Ext][Redpanda] Helm Charts"
+      name: "[Ext][Helm] Redpanda"
       type: helm
       insecure: "true"
-    kube-logging-helm-charts:
-      url: https://kube-logging.github.io/helm-charts
-      name: "[Ext][Kube Logging] Helm Charts"
-      type: helm
-      insecure: "true"
-    stakater-helm-charts:
+    ext-helm-stakater:
       url: https://stakater.github.io/stakater-charts
-      name: "[Ext][Stakater] Helm Charts"
+      name: "[Ext][Helm] Stakater"
       type: helm
       insecure: "true"
-    hashicorp-helm-charts:
+    ext-helm-hashicorp:
       url: https://helm.releases.hashicorp.com
-      name: "[Ext][HashiCorp] Helm Charts"
+      name: "[Ext][Helm] HashiCorp"
       type: helm
       insecure: "true"
-    jenkins-helm-charts:
+    ext-helm-jenkins:
       url: https://charts.jenkins.io
-      name: "[Ext][Jenkins] Helm Charts"
+      name: "[Ext][Helm] Jenkins"
       type: helm
       insecure: "true"
-    min-io-helm-charts:
+    ext-helm-minio:
       url: https://charts.min.io
-      name: "[Ext][MinIO] Helm Charts"
+      name: "[Ext][Helm] MinIO"
       type: helm
       insecure: "true"
-    jetstack-helm-charts:
+    ext-helm-jetstack:
       url: https://charts.jetstack.io
-      name: "[Ext][JetStack] Helm Charts"
+      name: "[Ext][Helm] JetStack"
       type: helm
       insecure: "true"
-    metallb-helm-charts:
+    ext-helm-metallb:
       url: https://metallb.github.io/metallb
-      name: "[Ext][MetaLB] Helm Charts"
+      name: "[Ext][Helm] MetalLB"
       type: helm
       insecure: "true"
-    kedacore-helm-charts:
+    ext-helm-kedacore:
       url: https://kedacore.github.io/charts
-      name: "[Ext][KEDA] Helm Charts"
+      name: "[Ext][Helm] KEDA"
       type: helm
       insecure: "true"
-    elastic-helm-charts:
+    ext-helm-elastic:
       url: https://helm.elastic.co
-      name: "[Ext][Elastic] Helm Charts"
+      name: "[Ext][Helm] Elastic"
       type: helm
       insecure: "true"
-    istio-helm-charts:
+    ext-helm-istio:
       url: https://istio-release.storage.googleapis.com/charts
-      name: "[Ext][Istio] Helm Charts"
+      name: "[Ext][Helm] Istio"
       type: helm
       insecure: "true"
-    crossplane-helm-charts:
+    ext-helm-crossplane:
       url: https://charts.crossplane.io/stable
-      name: "[Ext][Crossplane] Helm Charts"
+      name: "[Ext][Helm] Crossplane"
       type: helm
       insecure: "true"
-    kyverno-helm-charts:
+    ext-helm-kyverno:
       url: https://kyverno.github.io/kyverno/
-      name: "[Ext][Kyverno] Helm Charts"
+      name: "[Ext][Helm] Kyverno"
       type: helm
       insecure: "true"
-    fluent-helm-charts:
+    ext-helm-fluent:
       url: https://fluent.github.io/helm-charts
-      name: "[Ext][Fluent] Helm Charts"
+      name: "[Ext][Helm] Fluent"
       type: helm
       insecure: "true"
 
-      #
   cm:
     kustomize.enabled: true
     jsonnet.enabled: true
