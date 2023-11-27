@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: queues-redpanda
+  name: redpanda
   namespace: argocd-system
 spec:
   project: queues-system
