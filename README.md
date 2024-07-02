@@ -7,6 +7,8 @@ export REPO_URL="https://github.com/${PROJ_PATH}.git"
 
 kubectl create namespace argocd-system
 
+helm repo add argo https://argoproj.github.io/argo-helm
+
 helm upgrade \
     --install argocd argo/argo-cd \
     --namespace argocd-system \
