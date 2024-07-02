@@ -6,13 +6,13 @@ resources:
   - ../../base/generic
   # Stacks
   - ../../base/stacks/argocd
-#  - ../../base/stacks/argo-workflows
+  #- ../../base/stacks/argo-workflows
   #  - ../../base/stacks/metrics
-  - ../../base/stacks/logging
-#  - ../../base/stacks/istio
+  #- ../../base/stacks/logging
+  #- ../../base/stacks/istio
   # Tools
   #- ../../base/tools/keda
   #- ../../base/tools/crossplane
   #- ../../base/tools/kyverno
   # Queues
-  - ../../base/queues
+  #- ../../base/queues
